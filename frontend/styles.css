@@ -1,0 +1,5 @@
+body {
+    background-image: url('imagens/plano de fundo.jpg'); /* Substitua pelo caminho correto para sua imagem */
+    background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+  }
