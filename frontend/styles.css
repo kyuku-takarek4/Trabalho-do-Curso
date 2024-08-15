@@ -1,5 +1,5 @@
 body {
-    background-image: url('imagens/plano de fundo.png'); /* Substitua pelo caminho correto para sua imagem */
+    background-image: url('imagens/plano\ de\ fundo.jpg'); /* Substitua pelo caminho correto para sua imagem */
     background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
     background-repeat: no-repeat; /* Impede a repetição da imagem */
   }
@@ -12,4 +12,18 @@ body {
     flex-direction: column;
     margin-left: 35%;
     margin-right: 37%;
+    
+}
+.pelo{
+  border: 2px solid rgb(199, 199, 199);
+  border-radius: 25px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6%;
+ 
+  
+}
+.cor-da-letra{
+  color:  rgb(199, 199, 199);
 }
