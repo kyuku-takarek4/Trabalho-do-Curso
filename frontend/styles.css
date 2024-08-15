@@ -6,6 +6,7 @@ body {
 
 .login{
     border: 2px solid rgb(199, 199, 199);
+    border-radius: 25px;
     margin-top: 15%;
     display: flex;
     flex-direction: column;
