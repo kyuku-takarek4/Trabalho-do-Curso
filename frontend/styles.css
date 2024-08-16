@@ -14,7 +14,12 @@ body {
     margin-right: 37%;
     
 }
+  .login p
+{
+  margin: 10px 0px 20px 0px;
+}
 .pelo{
+  
   border: 2px solid rgb(199, 199, 199);
   border-radius: 25px;
   margin: 10px;
