@@ -12,7 +12,8 @@ body {
     display: flex;
     flex-direction: column;
     margin-left: 20%;
-    margin-right: 20%;  
+    margin-right: 20%; 
+    opacity: 50%; 
   }
   .cadastro p
   {
@@ -25,4 +26,9 @@ body {
     display: flex;
     flex-direction: column;
     padding: 1.6%;
+  }
+
+  .cadastro:hover{
+    transition: all 1s;
+    opacity: 100%;
   }
