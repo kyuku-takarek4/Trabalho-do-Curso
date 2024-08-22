@@ -6,17 +6,23 @@ body {
 
   
   .cadastro{
-      border: 2px solid rgba(143, 139, 139, 0.87);
-          border-radius: 25px;
-          padding: 0.4%;
-          margin-left: 5%;
-          margin: 16%;   
+    border: 2px solid rgb(199, 199, 199);
+    border-radius: 25px;
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20%;
+    margin-right: 20%;  
+  }
+  .cadastro p
+  {
+    margin: 10px 10px 20px 10px;
   }
   .texto{
-    border: 2px solid rgba(143, 139, 139, 0.87);
-          border-radius: 25px;
-          padding: 1.6%;
-          margin-left: 5%;
-          margin: 5%;  
+    border: 2px solid rgb(199, 199, 199);
+    border-radius: 25px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.6%;
   }
-
