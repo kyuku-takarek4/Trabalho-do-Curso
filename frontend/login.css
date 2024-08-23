@@ -31,3 +31,7 @@ body {
 .cor-da-letra{
   color:  rgb(199, 199, 199);
 }
+.pelo:hover{ 
+  transition: 1s;
+  opacity: 100%;
+}
