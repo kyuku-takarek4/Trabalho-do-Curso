@@ -1,4 +1,4 @@
-
+CSS
 
 /* Reseta algumas propriedades padrão para consistência entre navegadores */
 * {
@@ -56,7 +56,7 @@ body {
   margin-bottom: auto;
 }
 
-.butao_de_cadastrar {
+.butao {
   width: 100%;
   padding: 10px;
   background-color: #3de2ff;
@@ -72,11 +72,11 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
 }
 
-.butao_de_cadastrar:hover {
+.butao:hover {
   background-color: #4fa4ff;
 }
 
-.butao_de_voltar_1 {
+.butao2 {
   width: 100%;
   padding: 10px;
   background-color: #3de2ff;
@@ -91,6 +91,43 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
 }
 
-.butao_de_voltar_1:hover {
+.butao2:hover {
   background-color: #4fa4ff;
 }
+
+
+html
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="cadastro.css"> <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
+</head>
+<body>
+    <div class="cadastro">
+        
+        <form action="processar_cadastro.php" method="POST">
+            <div class="texto">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="texto">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="texto">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <div class="texto">
+                <label for="confirmar_senha">Confirmar Senha:</label>
+                <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+            </div>
+            <button type="submit" class="butao">Cadastrar</button>
+            <button type="submit" class="butao2">Voltar</button>
+        </form>
+    </div>
