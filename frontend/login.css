@@ -17,6 +17,13 @@ body {
 .login p {
   margin: 20px 20px 70px 20px;
 }
+.input-campo {
+  border: 2px solid rgb(199, 199, 199);
+  border-radius: 25px;
+  margin: 10px 10px 10px 10px;
+  padding: 10px;
+  font-size: 16px;
+}
 
 .pelo {
   border: 2px solid rgb(199, 199, 199);
@@ -33,6 +40,6 @@ body {
 
 .pelo:hover {
   transition: 1s;
-  opacity: 100%; /* Usar 1 em vez de 100% para opacidade */
+  opacity: 1; /* Usar 1 em vez de 100% para opacidade */
 }
 
