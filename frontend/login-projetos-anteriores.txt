@@ -84,3 +84,13 @@ body {
           
 }
 
+
+
+
+
+
+
+
+
+ <p class="pelo cor-da-letra">Email</p>
+  <p class="pelo cor-da-letra">Email</p>
