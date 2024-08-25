@@ -33,16 +33,6 @@ body {
 
 .pelo:hover {
   transition: 1s;
-  opacity: 1; /* Usar 1 em vez de 100% para opacidade */
+  opacity: 100%; /* Usar 1 em vez de 100% para opacidade */
 }
 
-#imagemdevoltar {
-  background-color: transparent; /* Fundo transparente */
-  border: none; /* Sem borda */
-  cursor: pointer; /* Cursor de pointer */
-}
-
-#imagemdevoltar img {
-  width: 50px;
-  height: 30px;
-}
