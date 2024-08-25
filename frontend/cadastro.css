@@ -24,7 +24,6 @@ body {
   padding: 20px;
   width: 80%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  
 }
 
 .cadastro h1 {
@@ -68,7 +67,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 10px;
-  margin-left: 70%;
+  margin-left: 1016px;
   width: 25%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
 }
@@ -88,7 +87,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 10px;
-  width: auto;
+  width: 100px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
 }
 
