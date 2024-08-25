@@ -1,38 +1,32 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastre-se</title>
-  <link rel="stylesheet" href="cadastro.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="cadastro.css"> <!-- Link para o arquivo CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap">
 </head>
 <body>
-  <div class="cadastro">
-    <label class="texto" for="email">E-mail</label>
-    <input type="email" id="email" placeholder="Digite seu e-mail"><br><br>
-
-    <label class="texto" for="senha">Senha</label>
-    <input type="password" id="senha" placeholder="Digite sua senha"><br><br>
-
-    <label class="texto" for="telefone">Telefone</label>
-    <input type="tel" id="telefone" placeholder="Digite seu telefone"><br><br>
-
-    <label class="texto" for="endereco">Endereço</label>
-    <input type="text" id="endereco" placeholder="Digite seu endereço"><br><br>
-    
-    <img id="butao" src="https://drive.google.com/file/d/1-AquhJEYCfBYXhui_q0WEDkvDvFHL37t/view?usp=sharing">  
-  </div>
-  
-  <script>
-    const butao = document.getElementById("butao");
-    butao.addEventListener("click", () => {
-      const email = document.getElementById('email').value;
-      const senha = document.getElementById('senha').value;
-      const telefone = document.getElementById('telefone').value;
-      const endereco = document.getElementById('endereco').value;
-      
-      alert(`Dados cadastrados:\nE-mail: ${email}\nSenha: ${senha}\nTelefone: ${telefone}\nEndereço: ${endereco}`);
-    });
-  </script>
-</body>
-</html>
+    <div class="cadastro">
+        
+        <form action="processar_cadastro.php" method="POST">
+            <div class="texto">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="texto">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="texto">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <div class="texto">
+                <label for="confirmar_senha">Confirmar Senha:</label>
+                <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+            </div>
+            <button type="submit" class="butao">Cadastrar</button>
+        </form>
+    </div>
