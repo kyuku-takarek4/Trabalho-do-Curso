@@ -1,39 +1,27 @@
-<html>
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Meu Site</title>
-      <link rel="stylesheet" href="login.css">
-    </head>
-    <body >
-        
-        <div  class="login" >
-            <solid rgb(199, 199, 199);>
-            <p class="pelo cor-da-letra" > Email </p> 
-            
-            <p class="pelo cor-da-letra" > senha </p>
-            </solid>
-            
-            <img   id ="butao" src="https://drive.google.com/file/d/1-AquhJEYCfBYXhui_q0WEDkvDvFHL37t/view?usp=sharing">  
-        </div>
-              
-      <script>
-        const butao=document.getElementById("butao")
-        butao.addEventListener("click", () => (
-          alert("Clicarao no butaozaoo")
-      ))
-      </script>
-    </body>
-    
-    </html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login">
+        <!-- Use CSS para definir a cor de fundo -->
+        <p class="pelo cor-da-letra">Email</p>
+        <p class="pelo cor-da-letra">Senha</p>
+        <img id="butao" src="imagens/Botâo Voltar.png" alt="Botão Voltar">
+    </div>
 
-
-
-
-
-
+    <script>
+        const butao = document.getElementById("butao");
+        butao.addEventListener("click", () => {
+            alert("Clicaram no botão!");
+        });
+    </script>
+</body>
+</html>
 
 
 

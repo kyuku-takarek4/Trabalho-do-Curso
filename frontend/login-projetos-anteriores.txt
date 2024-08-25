@@ -1,0 +1,86 @@
+<html>
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Meu Site</title>
+      <link rel="stylesheet" href="login.css">
+    </head>
+    <body >
+        
+        <div  class="login" >
+            <solid rgb(199, 199, 199);>
+            <p class="pelo cor-da-letra" > Email </p> 
+            
+            <p class="pelo cor-da-letra" > senha </p>
+            </solid>
+            
+           
+            <img  id ="butao" src="imagens/Botâo Voltar.png">  
+        </div>
+              
+      <script>
+        const butao=document.getElementById("butao")
+        butao.addEventListener("click", () => (
+          alert("Clicarao no butaozaoo")
+      ))
+      </script>
+    </body>
+    
+    </html>
+
+
+
+PARTE DO CSS ANTIGA
+
+body {
+    background-image: url('imagens/plano\ de\ fundo.jpg'); /* Substitua pelo caminho correto para sua imagem */
+    background-size: cover; /* Ajusta a imagem para cobrir todo o fundo */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+  }
+
+.login{
+    border: 2px solid rgb(199, 199, 199);
+    border-radius: 25px;
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 35%;
+    margin-right: 37%;
+    
+}
+  .login p
+{
+  margin: 20px 20px 70px 20px;
+}
+.pelo{
+  
+  border: 2px solid rgb(199, 199, 199);
+  border-radius: 25px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 1.6%;
+
+}
+.cor-da-letra{
+  color:  rgb(199, 199, 199);
+}
+.pelo:hover{ 
+  transition: 1s;
+  opacity: 100%;
+}
+#imagemdevoltar{
+  background-color: transparent; /* Fundo transparente */
+  border: none; /* Sem borda */
+  cursor: pointer; /* Cursor de pointer */
+}
+#imagemdevoltar{
+  
+            img{
+              width: 50px;
+              height: 30px;}
+          
+}
+
