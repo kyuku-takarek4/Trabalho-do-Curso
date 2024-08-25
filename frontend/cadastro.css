@@ -19,10 +19,10 @@ body {
 }
 
 .cadastro {
-  background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com opacidade */
+  background-color: rgba(255, 255, 255, 0.877); /* Fundo branco com opacidade */
   border-radius: 15px;
   padding: 20px;
-  width: 400px;
+  width: 80%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -41,13 +41,13 @@ body {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
-  color: #555;
+  color: #7e7676c0;
 }
 
 .texto input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #6e6d6dd7;
   border-radius: 5px;
   font-size: 16px;
 }
@@ -55,7 +55,7 @@ body {
 .butao {
   width: 100%;
   padding: 10px;
-  background-color: #007BFF;
+  background-color: #3de2ff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -63,8 +63,28 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 10px;
+  width: 80%;
 }
 
 .butao:hover {
-  background-color: #0056b3;
+  background-color: #4fa4ff;
+}
+
+.butao2 {
+  width: 100%;
+  padding: 10px;
+  background-color: #3de2ff;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: url(imagens/Botâo\ Voltar.png), auto;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  width: auto;
+  margin-left: auto;
+}
+
+.butao2:hover {
+  background-color: #4fa4ff;
 }
