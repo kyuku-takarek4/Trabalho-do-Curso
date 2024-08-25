@@ -41,4 +41,41 @@ body {
   transition: 1s;
   opacity: 1; /* Usar 1 em vez de 100% para opacidade */
 }
+.botaodeentrar {
+  width: 100%;
+  padding: 10px;
+  background-color: #3de2ff;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px 30px;
+  width: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
+}
+
+.botaodeentrar:hover {
+  background-color: #4fa4ff;
+}
+.botaodevoltar {
+  width: 100%;
+  padding: 10px;
+  background-color: #3de2ff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  margin-left: 1016px;
+  width: 25%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
+}
+
+.botaodevoltar:hover {
+  background-color: #4fa4ff;
+}
 
