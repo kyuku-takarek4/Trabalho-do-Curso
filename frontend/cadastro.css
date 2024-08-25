@@ -19,7 +19,7 @@ body {
 }
 
 .cadastro {
-  background-color: rgba(255, 255, 255, 0.877); /* Fundo branco com opacidade */
+  border: rgba(124, 124, 124, 0.836); /* Fundo branco com opacidade */
   border-radius: 15px;
   padding: 20px;
   width: 80%;
@@ -63,7 +63,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 10px;
-  width: 80%;
+  width: 45%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
 }
 
@@ -79,11 +79,12 @@ body {
   border: none;
   border-radius: 50px;
   font-size: 18px;
-  cursor: url(imagens/Botâo\ Voltar.png), auto;
+  cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 10px;
   width: auto;
-  margin-left: auto;
+  margin-left: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
 }
 
 .butao2:hover {
