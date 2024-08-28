@@ -7,14 +7,14 @@ body {
 .login {
   border: 2px solid rgb(199, 199, 199);
   border-radius: 25px;
-  margin: 250px 600px  ;
+  margin: 250px 500px  ;
   display: flex;
   flex-direction: column;
   
 }
 
 .login p {
-  margin: 20px 20px 850px 20px;
+  margin: 20px 20px 70px 20px;
 }
 .input-campo {
   border: 2px solid rgb(199, 199, 199);
