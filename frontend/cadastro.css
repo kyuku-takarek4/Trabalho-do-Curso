@@ -33,6 +33,19 @@ body {
   color: #333;
 }
 
+form{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 50vh;
+}
+
+.botoes{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .texto {
   margin-bottom: 15px;
 }
@@ -45,7 +58,7 @@ body {
 }
 
 .texto input {
-  width: 100%;
+  width: 40%;
   padding: 10px;
   border: 1px solid #6e6d6dd7;
   border-radius: 5px;
