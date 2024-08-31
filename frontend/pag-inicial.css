@@ -1,0 +1,29 @@
+.menu-botao{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    font-size: 10px;
+    cursor: pointer;
+    top: 15px;
+    left: 15px;
+    margin-top: 200px;
+    margin-left: 0;
+}
+.menu:hover{
+    transition: 1s;
+    opacity: 0;
+}
+
+.menu{
+    padding-top: 70px;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0,5s;
+    background: #111;
+    font-size: 20px ;
+    
+    
+}
