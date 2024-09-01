@@ -1,3 +1,6 @@
+
+
+
 .menu-botao{
     background-color: rgb(255, 255, 255);
     border: none;
@@ -38,4 +41,27 @@
     
 .menu.open{
     width: 250px;
+}
+.estilodolink{
+    text-decoration: none;
+}
+.barra-de-pesquisa{
+    margin-left: 300px;
+   font-style: color #3de2ff ;
+   display: flex ;
+    
+    
+
+}
+#barradepesquisa{
+    border: 2px solid #ece9e9;
+    border-radius: 15px;
+    padding: 3px 100px 3px 5px;
+    cursor: text;
+}
+input::placeholder{
+    color: #9ea0a0;
+}
+.lupa{
+    fill: #9ea0a0;
 }

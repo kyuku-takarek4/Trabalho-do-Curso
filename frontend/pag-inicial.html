@@ -4,9 +4,23 @@
     <title>pagina inicial</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pag-inicial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/pag-inicial.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
-<body>
+<body >
+    <header>
+        <nav id="navbar">
+        <i id="rota-logo" class="fa-solid fa-route">Blu</i> 
+        <input type="text" id="barradepesquisa" placeholder="Digite sua pesquisa aqui">
+     
+    
+    <svg class="lupa" height="24" viewBox="0 0 24 24" width="24">
+        <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+    </svg>
+    </nav>
+</header>
+    
     <div>
         <button class="menu-botao" onclick="toggleSidebar()">
             <img src="./imagens/menu-de-tres-linhas.png" alt="Menu">
@@ -15,12 +29,12 @@
     
 <div id="menu-sidebar" class="menu">
     <h1>Menu</h1>
-    <a>blablabla</a>
+    <a class="estilodolink" href="https://youtu.be/PwBeBIvxSRw">blablabla</a>
     <a>blablabla</a>
     <a>blablabla</a>
     <a>blablabla</a>
 </div>
-<script src="pag-inicial.js"></script>
 
+<script src="pag-inicial.js"></script>
 </body>
 </html>
