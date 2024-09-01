@@ -4,13 +4,13 @@
     font-size: 10px;
     cursor: pointer;
     top: 15px;
-    left: 15px;
-    margin-top: 200px;
+    left: 10px;
+    margin-top: 250px;
     margin-left: 0;
 }
-.menu:hover{
+.menu-botao:hover{
     transition: 1s;
-    opacity: 0;
+    background-color: rgb(171, 174, 176);
 }
 
 .menu{
@@ -22,8 +22,15 @@
     left: 0;
     overflow-x: hidden;
     transition: 0,5s;
-    background: #111;
+    background-color: #484cca;
     font-size: 20px ;
-    
-    
+}
+.menu a{
+    font-size: larger;
+    margin-left: 50px;
+    text-align: center;
+    color: aliceblue;
+}
+.menu.open{
+    width: 250px;
 }
