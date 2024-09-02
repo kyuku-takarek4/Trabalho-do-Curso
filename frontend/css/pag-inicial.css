@@ -5,51 +5,7 @@ header{
 }
 #sidebar{
     list-style: none;
-}
-.menu-botao{
-    background-color: rgb(255, 255, 255);
-    border: none;
-    font-size: 10px;
-    cursor: pointer;
-    top: 15px;
-    left: 10px;
-    margin-top: 30px;
-    margin-left: 0;
-}
-.menu-botao:hover{
    
-    background-color: rgb(171, 174, 176);
-}
-
-.menu{
-   
-    padding-top: 70px;
-    height: 100%;
-    width: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-x: hidden;
-    transition: width 0.2s ease;
-    background-color: #484cca;
-    font-size: 20px ;
-}
-.menu a{
-    
-    font-size: larger ;
-    margin-left: 50px;
-    text-align: center;
-    color: aliceblue;
-    text-decoration: none;
-}
-.menu h1{
-    color: rgb(255, 255, 255);
-    margin-left: 45px}
-    
-.menu.open{
-    width: 250px;
-}
-#estilodolink{
     text-decoration: none;
 }
 #bordabaixa{
@@ -57,15 +13,22 @@ header{
 }
 
 #navbar{
+   
     font-size: 20px;
     justify-content: space-between;
     text-decoration: none;
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 0 10px; 
+    padding: 10px 20px ; 
     box-sizing: border-box;
-    border-bottom: #79b3f0;    
+    border-bottom: #79b3f0;   
+    z-index: 1002; 
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left:0;
+    right: 0; ;
 
 }
 #navbar a{
@@ -92,18 +55,16 @@ input::placeholder{
     padding: 0;
     border-radius: 50%;
     color: white;
-    text-align: center;
     width: 50px;
     height: 50px;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    overflow: hidden;/*isso é pra deixar a img so onde eu quero */
     cursor: pointer;
 }
 #tamanhoimagem{
      width: 100%;
      height: 100%;
-     object-fit: cover; /* Garante que a imagem cubra totalmente o container */
+     object-fit: cover; /* pra cobrir o espaco todo */
     
 }
 
@@ -112,10 +73,7 @@ input::placeholder{
     
     color: #007bff;
 }
-.scroll{
-    overflow-y: scroll;
-    overflow: scroll;
-}
+
 .sidebar-perfil {
     border-radius: 15px;
     position: fixed;
@@ -126,7 +84,7 @@ input::placeholder{
     overflow: hidden;
     background-color: #babbc4;
     transition: height 0.2s ease;
-    z-index: 1000; /* sobresair */
+    z-index: 1005; /* sobresair */
     box-shadow: #9fa2a5;
 }
 
@@ -159,3 +117,51 @@ input::placeholder{
 
 }
 
+
+.menu-botao{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    font-size: 10px;
+    cursor: pointer;
+    top: 15px;
+    left: 10px;
+    margin-top: 100px;
+    margin-left: 0;
+    
+}
+.menu-botao:hover{
+   
+    background-color: rgb(171, 174, 176);
+}
+
+.menu{
+   
+    padding-top: 70px;
+    height: 100%;
+    width: 0;
+    position:fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: width 0.2s ease;
+    background-color: #484cca;
+    font-size: 20px ;
+    z-index: 1000;
+}
+.menu a{
+    
+    font-size: larger ;
+    margin-left: 50px;
+    text-align: center;
+    color: aliceblue;
+    text-decoration: none;
+}
+.menu h1{
+    color: rgb(255, 255, 255);
+    margin-left: 45px}
+    
+.menu.open{
+    width: 250px;
+}
+#estilodolink{ 
+    text-decoration: none;
