@@ -17,7 +17,7 @@ header{
     margin-left: 0;
 }
 .menu-botao:hover{
-    transition: 1s;
+   
     background-color: rgb(171, 174, 176);
 }
 
@@ -30,7 +30,7 @@ header{
     top: 0;
     left: 0;
     overflow-x: hidden;
-    transition: 0,5s;
+    transition: width 0.2s ease;
     background-color: #484cca;
     font-size: 20px ;
 }
@@ -65,7 +65,7 @@ header{
     width: 100%;
     padding: 0 10px; 
     box-sizing: border-box;
-    border-bottom: #79b3f0;
+    border-bottom: #79b3f0;    
 
 }
 #navbar a{
@@ -88,17 +88,23 @@ input::placeholder{
     cursor: pointer;
 }
 #perfil {
-    background-color: #79b3f0;
-    padding: 10px;
+    background-color: none;
+    padding: 0;
     border-radius: 50%;
     color: white;
     text-align: center;
-    width: 40px;
-    height: 40px;
-    display: flex;
+    width: 50px;
+    height: 50px;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    overflow: hidden;
+    cursor: pointer;
+}
+#tamanhoimagem{
+     width: 100%;
+     height: 100%;
+     object-fit: cover; /* Garante que a imagem cubra totalmente o container */
+    
 }
 
 
@@ -110,6 +116,46 @@ input::placeholder{
     overflow-y: scroll;
     overflow: scroll;
 }
+.sidebar-perfil {
+    border-radius: 15px;
+    position: fixed;
+    top: 60px; 
+    right: 50px; 
+    width: 200px;
+    height: 0;
+    overflow: hidden;
+    background-color: #babbc4;
+    transition: height 0.2s ease;
+    z-index: 1000; /* sobresair */
+    box-shadow: #9fa2a5;
+}
 
+.sidebar-perfil.open { 
+    height: 150px;
+ 
+   
+}
 
+.sidebar-perfil ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-perfil li {
+    margin: 10px 15px 30px;
+}
+
+.sidebar-perfil a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sidebar-perfil a:hover {
+    text-decoration: underline ;
+    text-decoration-color:#9fa2a5 ;
+
+}
 
