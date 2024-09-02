@@ -1,6 +1,11 @@
 
-
-
+header{
+    width: 100%;
+    padding: 5px 1%;
+}
+#sidebar{
+    list-style: none;
+}
 .menu-botao{
     background-color: rgb(255, 255, 255);
     border: none;
@@ -8,7 +13,7 @@
     cursor: pointer;
     top: 15px;
     left: 10px;
-    margin-top: 250px;
+    margin-top: 30px;
     margin-left: 0;
 }
 .menu-botao:hover{
@@ -17,6 +22,7 @@
 }
 
 .menu{
+   
     padding-top: 70px;
     height: 100%;
     width: 0;
@@ -29,11 +35,12 @@
     font-size: 20px ;
 }
 .menu a{
-    display: flex;
+    
     font-size: larger ;
     margin-left: 50px;
     text-align: center;
     color: aliceblue;
+    text-decoration: none;
 }
 .menu h1{
     color: rgb(255, 255, 255);
@@ -42,26 +49,67 @@
 .menu.open{
     width: 250px;
 }
-.estilodolink{
+#estilodolink{
     text-decoration: none;
 }
-.barra-de-pesquisa{
-    margin-left: 300px;
-   font-style: color #3de2ff ;
-   display: flex ;
-    
-    
+#bordabaixa{
+    border-bottom: #9ea0a0;
+}
+
+#navbar{
+    font-size: 20px;
+    justify-content: space-between;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 10px; 
+    box-sizing: border-box;
+    border-bottom: #79b3f0;
 
 }
+#navbar a{
+    font-weight: 600;
+}
 #barradepesquisa{
-    border: 2px solid #ece9e9;
+    padding: 5px 10px;
     border-radius: 15px;
-    padding: 3px 100px 3px 5px;
+    border: 1px solid #ced4da;
+    width: 200px;
     cursor: text;
+    
 }
 input::placeholder{
     color: #9ea0a0;
 }
-.lupa{
+#lupa{
     fill: #9ea0a0;
+    margin-left: 5px; /* Coloca a lupa sobre o lado direito do campo de pesquisa */
+    cursor: pointer;
 }
+#perfil {
+    background-color: #79b3f0;
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+
+#rota-logo {
+    
+    color: #007bff;
+}
+.scroll{
+    overflow-y: scroll;
+    overflow: scroll;
+}
+
+
+
