@@ -13,14 +13,13 @@ header{
 }
 
 #navbar{
-   
-    font-size: 20px;
+ 
     justify-content: space-between;
     text-decoration: none;
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 10px 20px ; 
+    padding: 10px 10px 20PX ; 
     box-sizing: border-box;
     border-bottom: #79b3f0;   
     z-index: 1002; 
@@ -33,14 +32,16 @@ header{
 
 }
 #navbar a{
-    font-weight: 600;
+    font-weight: 600PX;
 }
+
 #barradepesquisa{
-    padding: 5px 10px;
+    padding: 10px 500px 6PX 10PX;
     border-radius: 15px;
     border: 1px solid #ced4da;
     width: 200px;
     cursor: text;
+    font-size: 10;
     
 }
 input::placeholder{
@@ -50,6 +51,7 @@ input::placeholder{
     fill: #9ea0a0;
     margin-left: 5px; /* Coloca a lupa sobre o lado direito do campo de pesquisa */
     cursor: pointer;
+    font-size: 35px;
 }
 #perfil {
     background-color: none;
@@ -73,6 +75,9 @@ input::placeholder{
 #rota-logo {
     
     color: #007bff;
+    font-size: 35px;
+    
+
 }
 
 .sidebar-perfil {
@@ -122,7 +127,7 @@ input::placeholder{
 .menu-botao{
     padding: 1px;
     background-color: rgb(255, 255, 255);
-    border: none;
+    border-style: none  ;
     font-size: 10px;
     cursor: pointer;
     margin-top: 100px;
@@ -130,15 +135,17 @@ input::placeholder{
     
 }
 .menu-botao:hover{
-   
-    background-color: rgb(171, 174, 176);
+    border-radius: 15px;
+    border: #828e9b;
+    
+    
 }
 
 .menu{
     height: 100%;
     width: 0;
     position:fixed;
-    top: 70px;
+    top: 80px;
     left: 0px;
     bottom: 0;
     overflow-x: hidden;
