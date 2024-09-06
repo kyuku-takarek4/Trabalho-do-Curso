@@ -40,8 +40,11 @@ body {
   padding: 50px;
   bottom: 0;
   width: 800px;
-  height: 600px;
-
+  height: 500px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .texto {
@@ -52,7 +55,7 @@ body {
 
 
 .texto input {
-  width: 40%;
+  width: 80%;
   padding: 15px;
   border: 1px solid #d1d1d1;
   border-radius: 50px;
@@ -66,7 +69,8 @@ body {
 .botoes{
   display: flex;
   justify-content: space-between;
-
+  margin-top: 14%;
+  width: 600px;
 }
 .butao_de_cadastrar {
   padding: 15px 30px;
