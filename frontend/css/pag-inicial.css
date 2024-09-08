@@ -173,3 +173,21 @@ input::placeholder{
 #estilodolink{ 
     text-decoration: none;
 }
+#carrossel-unico{
+    border-radius: 15px;
+    background-color: #d1d1d1;
+    width: 800px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;
+    box-sizing: border-box;
+}
+
+#carrossel img{
+    height: 100%;
+    width: auto;
+    border-radius: 15px;
+    margin: 0 10px 0 ;
+}
