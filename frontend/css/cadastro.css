@@ -27,13 +27,13 @@ body {
   padding: 18px; /* Espaçamento interno */
   border-radius: 50px; /* Bordas arredondadas */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  left: 40%;
+  left: 43.5%;
   position: fixed;
 
 
 }
 .cadastro {
-  position:fixed ;
+  position:fixed;
   top: 200px;
   border:3px solid #d1d1d1; /* Fundo branco com opacidade */
   border-radius: 35px;
@@ -55,7 +55,7 @@ body {
 
 
 .texto input {
-  width: 80%;
+  width: 90%;
   padding: 15px;
   border: 1px solid #d1d1d1;
   border-radius: 50px;
@@ -64,14 +64,14 @@ body {
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 10px;        
-  align-items: center;          
+  align-items: center;
 }
 .botoes{
   align-items: center;
   display: flex;
   justify-content: space-between;
   margin-top: 14%;
-  width: 600px;
+  width: 659px;
   position: absolute;
   
 }
@@ -86,8 +86,7 @@ body {
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 60px;
-  right: 0;
+  margin-top: 260px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
 }
 
@@ -106,8 +105,8 @@ body {
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 60px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
+  margin-top: 260px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.38260)
 }
 
 .butao_de_voltar_1:hover {
