@@ -1,4 +1,6 @@
-
+*{
+    box-sizing: border-box;
+}
 header{
     width: 100%;
     padding: 5px 1%;
@@ -20,7 +22,6 @@ header{
     align-items: center;
     width: 100%;
     padding: 10px 10px 20PX ; 
-    box-sizing: border-box;
     border-bottom: #79b3f0;   
     z-index: 1002; 
     background-color: #ffffff;
@@ -30,26 +31,32 @@ header{
     right: 0; ;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 
-}
-#navbar a{
-    font-weight: 600PX;
+}  
+#rota-logo {
+    left: 10px;
+    color: #007bff;
+    font-size: 35px;
+    position: fixed;  
 }
 
 #barradepesquisa{
-    padding: 10px 500px 6PX 10PX;
-    border-radius: 15px;
+    top: 20px;
+    left: 30%;
+    padding: 10px 50px 10px 10px;
+    border-radius: 20px;
     border: 1px solid #ced4da;
-    width: 200px;
+    width:30%;
     cursor: text;
     font-size: 10;
-    
+    position: fixed;
 }
 input::placeholder{
-    color: #9ea0a0;
+    color: #9ea0a0; 
 }
 #lupa{
-    fill: #9ea0a0;
-    margin-left: 5px; /* Coloca a lupa sobre o lado direito do campo de pesquisa */
+    top: 20px;
+    left: 61%;
+    position: fixed;
     cursor: pointer;
     font-size: 35px;
 }
@@ -69,15 +76,6 @@ input::placeholder{
      height: 100%;
      object-fit: cover; /* pra cobrir o espaco todo */
     
-}
-
-
-#rota-logo {
-    
-    color: #007bff;
-    font-size: 35px;
-    
-
 }
 
 .sidebar-perfil {
@@ -158,50 +156,64 @@ input::placeholder{
 }
 .menu-botao{
     padding: 1px;
-    background-color: rgb(255, 255, 255);
-    border-style: none  ;
+    background-color: #007bffd4;
+    border:1px solid #ffffff;
+    border-radius:left 5px;
     font-size: 10px;
     cursor: pointer;
     margin-top: 100px;
-    
+    margin-left: 0;
     position: fixed;
    
     
 }
+.menu-botao img{
+    z-index: 1%;
+    
+}
 .menu-botao:hover{
-    border-radius: 15px;
     border: #828e9b;
+    border: 1px solid black ;
   
+}
+#texto-teste{
+    margin-top: 120px ;
+    margin-left: 14px;
+    color: #d1d1d1;
 }
 #carrossel{
     border-radius: 15px;
     background-color: #d1d1d1;
-    top: 200px;
-    overflow: hidden;
+    margin-top: 10px;
     width: 700px;
     height: 150px;
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
-    position: fixed;
-    box-sizing: border-box;
+    padding: 10px;
+  
+  
 }
 
 
 #carrossel img{
     height: 100%;
-    width: auto;
+    width: 160px;
     border-radius: 15px;
     margin: 0 10px 0 ;
 }
 #esponsividade{
     align-items: center;
-    transition: width 0,2s ease;
-    
+    position: relative;
+    left: 30px;
+    transition: width 0.2s ease;
 }
 #esponsividade.active{
-    align-items: center;
-    left: 20%;
-    position: fixed;
+    left: 300px;
+    
   
+}
+.scroll{
+    overflow-y: scroll; 
+    overflow-x: hidden;
+    height: 2001px;
 }
