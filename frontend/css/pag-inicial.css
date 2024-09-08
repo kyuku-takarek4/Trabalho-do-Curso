@@ -124,23 +124,6 @@ input::placeholder{
 }
 
 
-.menu-botao{
-    padding: 1px;
-    background-color: rgb(255, 255, 255);
-    border-style: none  ;
-    font-size: 10px;
-    cursor: pointer;
-    margin-top: 100px;
-    margin-left: 0;
-    
-}
-.menu-botao:hover{
-    border-radius: 15px;
-    border: #828e9b;
-    
-    
-}
-
 .menu{
     height: 100%;
     width: 0;
@@ -173,11 +156,30 @@ input::placeholder{
 #estilodolink{ 
     text-decoration: none;
 }
-#carrossel-unico{
+.menu-botao{
+    padding: 1px;
+    background-color: rgb(255, 255, 255);
+    border-style: none  ;
+    font-size: 10px;
+    cursor: pointer;
+    margin-top: 100px;
+    
+    position: fixed;
+   
+    
+}
+.menu-botao:hover{
+    border-radius: 15px;
+    border: #828e9b;
+  
+}
+#carrossel{
     border-radius: 15px;
     background-color: #d1d1d1;
-    width: 800px;
-    height: 100px;
+    top: 200px;
+    overflow: hidden;
+    width: 700px;
+    height: 150px;
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
@@ -185,9 +187,21 @@ input::placeholder{
     box-sizing: border-box;
 }
 
+
 #carrossel img{
     height: 100%;
     width: auto;
     border-radius: 15px;
     margin: 0 10px 0 ;
+}
+#esponsividade{
+    align-items: center;
+    transition: width 0,2s ease;
+    
+}
+#esponsividade.active{
+    align-items: center;
+    left: 20%;
+    position: fixed;
+  
 }
