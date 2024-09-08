@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>pagina inicial</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/pag-inicial.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body >
+    <header id="bordabaixa">
+        <nav id="navbar">
+        <i id="rota-logo" class="fa-solid fa-route">Blu</i> 
+        <div>
+        <input type="text" id="barradepesquisa" placeholder="Digite sua pesquisa aqui">
+        <i id="lupa" class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <button id="perfil" onclick="sidebarPerfil()" >
+            <img id="tamanhoimagem" src="https://i.pinimg.com/originals/fe/ca/b1/fecab1f731c42e9af0c86504f791de0d.jpg">
+        </button>
+        
+    </nav>
+</header>
+    <div id="perfil-sidebar" class="sidebar-perfil">
+        <ul class="ubuntu-light">
+            <li><a>Perfil</a></li>
+            <li><a>bbbbbb</a></li>
+            <li><a>Configurações</a></li>
+        </ul>
+    </div>
+<div id="menu-sidebar" class="menu">
+    <ul id="sidebar">
+        <li>
+            <h1 id="menu">Menu</h1>
+        </li>
+        <li>
+            <a id="estilodolink" href="https://youtu.be/PwBeBIvxSRw">video teste</a>
+        </li>
+        <li>
+            <a href="">teste</a>
+        </li>
+        <li>
+            <a href="">teste</a>
+        </li>
+        <li>
+            <a href="">teste</a>
+        </li>
+    </ul>
+</div>
+
+
+
+<div id="esponsividade" >
+<div>
+    <button class="menu-botao" onclick="toggleSidebar()">
+        <img src="./imagens/menu-de-tres-linhas.png" alt="Menu">
+    </button>
+</div>
+
+<div class="ubuntu-light">teste</div>
+
+
+
+    <div id="carrossel-diversos">
+        <div id="carrossel">
+            <div><img src="https://blog.agenciadosite.com.br/wp-content/uploads/2017/02/logos-para-empresas-como-criar.png" >
+            </div>
+            <div><img src="https://s2.glbimg.com/Bu6upvmSg6SRv0za635uXphThKo=/620x430/e.glbimg.com/og/ed/f/original/2020/03/28/mercado-livre.jpg" alt="segunda">
+            </div>
+            <div><img src="https://blog.workana.com/wp-content/uploads/2018/10/logo-facebook-workana.png" alt="terceira">
+            </div>
+            <div><img src="https://s2.glbimg.com/V0vLGchlI0S7Xll4emaGMIJZSLU=/940x523/e.glbimg.com/og/ed/f/original/2021/01/07/bk-novo_logo.jpg" alt="quarta">
+            </div>
+            <div><img src="https://blog.workana.com/wp-content/uploads/2018/10/logotipo-apple-workana.png" alt="quinta">
+            </div>
+            <div><img src="https://blog.workana.com/wp-content/uploads/2018/10/logo-walmart-workana.png" alt="sexta">
+            </div>
+       
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<script src="pag-inicial.js"></script>
+
+</body>
+</html>

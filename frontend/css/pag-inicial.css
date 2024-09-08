@@ -1,0 +1,207 @@
+
+header{
+    width: 100%;
+    padding: 5px 1%;
+}
+#sidebar{
+    list-style: none;
+   
+    text-decoration: none;
+}
+#bordabaixa{
+    border-bottom: #9ea0a0;
+}
+
+#navbar{
+ 
+    justify-content: space-between;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 10px 20PX ; 
+    box-sizing: border-box;
+    border-bottom: #79b3f0;   
+    z-index: 1002; 
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left:0;
+    right: 0; ;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+}
+#navbar a{
+    font-weight: 600PX;
+}
+
+#barradepesquisa{
+    padding: 10px 500px 6PX 10PX;
+    border-radius: 15px;
+    border: 1px solid #ced4da;
+    width: 200px;
+    cursor: text;
+    font-size: 10;
+    
+}
+input::placeholder{
+    color: #9ea0a0;
+}
+#lupa{
+    fill: #9ea0a0;
+    margin-left: 5px; /* Coloca a lupa sobre o lado direito do campo de pesquisa */
+    cursor: pointer;
+    font-size: 35px;
+}
+#perfil {
+    background-color: none;
+    padding: 0;
+    border-radius: 50%;
+    color: white;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    overflow: hidden;/*isso é pra deixar a img so onde eu quero */
+    cursor: pointer;
+}
+#tamanhoimagem{
+     width: 100%;
+     height: 100%;
+     object-fit: cover; /* pra cobrir o espaco todo */
+    
+}
+
+
+#rota-logo {
+    
+    color: #007bff;
+    font-size: 35px;
+    
+
+}
+
+.sidebar-perfil {
+    border-radius: 15px;
+    position: fixed;
+    top: 60px; 
+    right: 50px; 
+    width: 200px;
+    height: 0;
+    overflow: hidden;
+    background-color: #babbc4;
+    transition: height 0.2s ease;
+    z-index: 1005; /* sobresair */
+    box-shadow: #9fa2a5;
+}
+
+.sidebar-perfil.open { 
+    height: 150px;
+ 
+   
+}
+
+.sidebar-perfil ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-perfil li {
+    margin: 10px 15px 30px;
+}
+
+.sidebar-perfil a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sidebar-perfil a:hover {
+    text-decoration: underline ;
+    text-decoration-color:#9fa2a5 ;
+
+}
+
+
+.menu{
+    height: 100%;
+    width: 0;
+    position:fixed;
+    top: 80px;
+    left: 0px;
+    bottom: 0;
+    overflow-x: hidden;
+    transition: width 0.2s ease;
+    background-color: #484cca;
+    font-size: 20px ;
+    z-index: 1000;
+   
+}
+.menu a{
+    
+    font-size: larger ;
+    margin-left: 10px;
+    text-align: center;
+    color: aliceblue;
+    text-decoration: none;
+}
+.menu h1{
+    color: rgb(255, 255, 255);
+    margin-left: 10px}
+    
+.menu.open{
+    width: 250px;
+}
+#estilodolink{ 
+    text-decoration: none;
+}
+.menu-botao{
+    padding: 1px;
+    background-color: rgb(255, 255, 255);
+    border-style: none  ;
+    font-size: 10px;
+    cursor: pointer;
+    margin-top: 100px;
+    
+    position: fixed;
+   
+    
+}
+.menu-botao:hover{
+    border-radius: 15px;
+    border: #828e9b;
+  
+}
+#carrossel{
+    border-radius: 15px;
+    background-color: #d1d1d1;
+    top: 200px;
+    overflow: hidden;
+    width: 700px;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;
+    box-sizing: border-box;
+}
+
+
+#carrossel img{
+    height: 100%;
+    width: auto;
+    border-radius: 15px;
+    margin: 0 10px 0 ;
+}
+#esponsividade{
+    align-items: center;
+    transition: width 0,2s ease;
+    
+}
+#esponsividade.active{
+    align-items: center;
+    left: 20%;
+    position: fixed;
+  
+}

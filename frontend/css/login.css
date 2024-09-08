@@ -7,7 +7,7 @@ body {
 .login {
   border: 2px solid rgb(199, 199, 199);
   border-radius: 25px;
-  margin: 200px 400px ;
+  margin: 250px 500px  ;
   display: flex;
   flex-direction: column;
   
@@ -16,12 +16,14 @@ body {
 .login p {
   margin: 20px 20px 70px 20px;
 }
-.input-campo {
+.emailesenha {
   border: 2px solid rgb(199, 199, 199);
   border-radius: 25px;
   margin: 10px 10px 10px 10px;
   padding: 10px;
   font-size: 16px;
+  cursor: text;
+  
 }
 
 .pelo {
@@ -32,26 +34,35 @@ body {
   flex-direction: column;
   padding: 1.6%;
 }
-
-.cor-da-letra {
-  color: rgb(199, 199, 199);
-}
-
 .pelo:hover {
   transition: 1s;
   opacity: 1; /* Usar 1 em vez de 100% para opacidade */
 }
+.cor-da-letra {
+  color: rgb(199, 199, 199);
+}
+
+.botoes{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+}
+
 .botaodeentrar {
-  width: 100%;
-  padding: 10px;
-  background-color: #3de2ff;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px 15px 10px ;
+  background: linear-gradient(45deg, #4fa4ff, #3de2ff );
+  
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 50px;
   font-size: 18px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 10px 30px;
+  transition: background-color 0. 3s ease;
+  margin-top: 20px;
+  margin-bottom:20px;
   width: 100px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
 }
@@ -60,22 +71,26 @@ body {
   background-color: #4fa4ff;
 }
 .botaodevoltar {
-  width: 100%;
-  padding: 10px;
-  background-color: #3de2ff;
+  text-decoration: none;
+  padding: 15px 40px 10px  ;
+  background: linear-gradient(to right, #3de2ff,#4fa4ff);
   color: white;
   border: none;
   border-radius: 50px;
   font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 10px;
-  margin-left: 1016px;
-  width: 25%;
+  margin-top: 20px;
+  margin-bottom:20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
 }
 
 .botaodevoltar:hover {
   background-color: #4fa4ff;
 }
+
+input::placeholder{
+    color: #9ea0a0; /*isso é a cor da letra da caixa de texto*/
+}
+
 

@@ -1,0 +1,119 @@
+
+
+/* Reseta algumas propriedades padrão para consistência entre navegadores */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-image: url('imagens/Tela\ de\ Cadastrar.png'); /* Substitua pelo caminho correto para sua imagem */
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.TituloDeCadastro{
+  font-size: 40px; /* Tamanho grande para o título */
+  color: #ffffff; /* Cor do texto */
+  top: 10%;
+  letter-spacing: 2px; /* Espaçamento entre letras */
+  background-color: #d1d1d1; /* Fundo do título */
+  padding: 18px; /* Espaçamento interno */
+  border-radius: 50px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  left: 40%;
+  position: fixed;
+
+
+}
+.cadastro {
+  position:fixed ;
+  top: 200px;
+  border:3px solid #d1d1d1; /* Fundo branco com opacidade */
+  border-radius: 35px;
+  padding: 50px;
+  bottom: 0;
+  width: 800px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+
+.texto {
+  margin-bottom: 15px;
+  border-radius: 50px;
+
+}
+
+
+.texto input {
+  width: 80%;
+  padding: 15px;
+  border: 1px solid #d1d1d1;
+  border-radius: 50px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 10px;        
+  align-items: center;          
+}
+.botoes{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14%;
+  width: 600px;
+  position: absolute;
+  
+}
+.butao_de_cadastrar {
+  padding: 15px 30px;
+  font-weight: bolder;
+  font-size: 20px;
+  letter-spacing: 2px;
+  background-color: #3de2ff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 60px;
+  right: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
+}
+
+.butao_de_cadastrar:hover {
+  background-color: #4fa4ff;
+}
+
+.butao_de_voltar_1 {
+  padding: 15px 30px;
+  font-weight: bolder;
+  font-size: 20px;
+  letter-spacing: 2px;
+  background-color: #3de2ff;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
+}
+
+.butao_de_voltar_1:hover {
+  background-color: #4fa4ff;
+}
+
+input::placeholder{
+  color: #d1d1d1;
+}
