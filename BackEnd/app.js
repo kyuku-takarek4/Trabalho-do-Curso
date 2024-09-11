@@ -1,21 +1,18 @@
 const express = require('express');
 const app = express();
 
-// Configuração do Sequelize
-const db = require('./config/database');
-
-// Testar a conexão com o banco de dados
-db.authenticate()
-  .then(() => console.log('Conexão com o banco de dados estabelecida com sucesso.'))
-  .catch(err => console.error('Erro ao conectar com o banco de dados:', err));
+// Configuração do Firebase
+const admin = require('firebase-admin');
+const serviceAccount = require('./secrets/programa-dos-programinhos-firebase-adminsdk-22xg4-3d1679abf2.json');
 
 // Middlewares
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
- //Importar rotas
-const produtosRoutes = require('./rotas/RotasProdutos');
+// Importar rotas
+const produtosRoutes = require('./routes/produtosRoutes');
 
- //Usar rotas
+// Usar rotas
 app.use('/api', produtosRoutes);
 
 // Iniciar o servidor
