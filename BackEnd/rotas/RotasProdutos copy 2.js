@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ProdutoController = require('../controlador/ControladorProduto');
+const ProdutoController = require('../controllers/ProdutoController');
 
 // Rota para criar um novo produto
 router.post('/produtos', ProdutoController.createProduto);
@@ -16,11 +16,5 @@ router.put('/produtos/:id', ProdutoController.updateProduto);
 
 // Rota para deletar um produto
 router.delete('/produtos/:id', ProdutoController.deleteProduto);
-
-// Rota para registrar entrada de estoque
-//router.post('/produtos/:id/entrada', ProdutoController.registrarEntrada);
-
-// Rota para registrar saída de estoque
-//router.post('/produtos/:id/saida', ProdutoController.registrarSaida);
 
 module.exports = router;
