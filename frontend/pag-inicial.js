@@ -40,8 +40,11 @@ document.addEventListener('click', function(event) {
          // Remove a classe 'active' ao fechar
     }
 });
-function Carrossel(){
-    document.addEventListener('click')
-    const Carrossel= document.getElementById("carrossel")
+/*function Carrossel()
+    document.addEventListener('click', function(carros){
+    const Carrossel= document.getElementById('carrossel');
+    if (Carrossel.contains(carros.target));
     
-};
+    
+    
+});*/

@@ -1,92 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrossel Simples</title>
+    <title>Carrossel</title>
     <style>
-        /* Estilos do carrossel */
-        .carousel {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
+        #carrossel {
+            width: 300px;
             overflow: hidden;
+            white-space: nowrap;
+            border: 1px solid black;
         }
 
-        .carousel-inner {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-item {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
-
-        .carousel img {
-            width: 100%;
-        }
-
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
+        .item {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 0 5px;
+            background-color: lightblue;
         }
     </style>
 </head>
 <body>
 
-    <!-- Estrutura do carrossel -->
-    <div class="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://blog.workana.com/wp-content/uploads/2018/10/logo-facebook-workana.png" alt="Imagem 1">
-            </div>
-            <div class="carousel-item">
-                <img src="https://blog.workana.com/wp-content/uploads/2018/10/logo-facebook-workana.png" alt="Imagem 2">
-            </div>
-            <div class="carousel-item">
-                <img src="https://blog.workana.com/wp-content/uploads/2018/10/logo-facebook-workana.png" alt="Imagem 3">
-            </div>
-        </div>
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
-    </div>
+<div id="carrossel">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+</div>
 
-    <script>
-        let currentSlide = 0;
+<button id="esquerda">Esquerda</button>
+<button id="direita">Direita</button>
 
-        function showSlide(index) {
-            const slides = document.querySelectorAll('.carousel-item');
-            if (index >= slides.length) currentSlide = 0;
-            if (index < 0) currentSlide = slides.length - 1;
-            document.querySelector('.carousel-inner').style.transform = `translateX(-${currentSlide * 100}%)`;
+<script>
+function Carrossel() {
+    const carrossel = document.getElementById('carrossel');
+    let posicaoAtual = 0;
+
+    document.getElementById('esquerda').addEventListener('click', function() {
+        // Mover para a esquerda
+        if (posicaoAtual < 0) {
+            posicaoAtual += 100; // Altera 100px por vez
+            carrossel.scrollLeft = posicaoAtual;
         }
+    });
 
-        function changeSlide(step) {
-            currentSlide += step;
-            showSlide(currentSlide);
+    document.getElementById('direita').addEventListener('click', function() {
+        // Mover para a direita
+        if (carrossel.scrollWidth > carrossel.offsetWidth + posicaoAtual) {
+            posicaoAtual -= 100; // Altera 100px por vez
+            carrossel.scrollLeft = -posicaoAtual;
         }
+    });
+}
 
-        // Auto slide (opcional)
-        setInterval(() => {
-            changeSlide(1);
-        }, 3000);
-    </script>
+Carrossel();
+</script>
 
 </body>
 </html>

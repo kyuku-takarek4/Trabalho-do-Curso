@@ -184,22 +184,23 @@ input::placeholder{
 #carrossel{
     border-radius: 15px;
     background-color: #d1d1d1;
-    margin-top: 10px;
-    width: 700px;
-    height: 150px;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-  
-  
+    width: 300px;
+    overflow: hidden;
+
+    
 }
 
 
-#carrossel img{
-    height: 100%;
-    width: 160px;
-    border-radius: 15px;
-    margin: 0 10px 0 ;
+.imagem {
+      
+            width: 100px;
+            height: 100px;
+            margin: 0 5px;
+            background-color: lightblue;
+    
+
+ 
+    
 }
 #esponsividade{
     align-items: center;
