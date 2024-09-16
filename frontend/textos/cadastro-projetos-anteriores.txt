@@ -131,3 +131,8 @@ html
             <button type="submit" class="butao2">Voltar</button>
         </form>
     </div>
+
+
+
+  <div class="imagem" ><img src="https://blog.agenciadosite.com.br/wp-content/uploads/2017/02/logos-para-empresas-como-criar.png" ></div>
+      

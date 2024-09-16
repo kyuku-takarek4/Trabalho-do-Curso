@@ -21,7 +21,7 @@ header{
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 10px 10px 20PX ; 
+    padding: 10px 10px 20px ; 
     border-bottom: #79b3f0;   
     z-index: 1002; 
     background-color: #ffffff;
@@ -155,21 +155,22 @@ input::placeholder{
     text-decoration: none;
 }
 .menu-botao{
-    padding: 2px 0PX 0PX 0PX;
-    background-color: #e6e6e673;
-    border:1px solid #ffffff;
-    border-radius:left 5px;
-    font-size: 10px;
+    padding: 4px 2px 2px 2px;
+    background-color: #ffffff;
+    border:1px solid #ffffff00;
+    border-radius:0px 12px 12px 0px;
     cursor: pointer;
-    margin-top: 100px;
-    margin-left: 0;
+    top: 200px;
+    left: 0;
     position: fixed;
+    transition: left 0.2s ease;
    
     
 }
 .menu-botao img{
     z-index: 1%;
-    
+    width: 22px ;
+    height: 22px;
 }
 .menu-botao:hover{
     border: #828e9b;
@@ -182,35 +183,73 @@ input::placeholder{
     color: #d1d1d1;
 }
 #carrossel{
+    padding: 5px;
     border-radius: 15px;
     background-color: #d1d1d1;
-    width: 300px;
-    overflow: hidden;
-
+    width: 765px;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    z-index: 0;
+    overflow-x:auto;
+    overflow-y: hidden;
+}
+#carrossel::-webkit-scrollbar{
+    display: none;
+}
+.botao-carrossel{
+    border: none;
+    border-radius: 100%;
+    background: #ffffff;
+    padding: 5px 8px;
+    cursor: pointer;
+    color: #000000;
+    transition: transform 0.2s ease ;
+    position: static;
+}
+.botao-carrossel:first-of-type{
+    margin-right:20px;
+}
+.botao-carrossel:last-of-type{
+    margin-left: 20px;
+}
+.botao-carrossel:hover{
+    transform: scale(2.2,2.2);
     
 }
 
-
 .imagem {
-      
-            width: 100px;
-            height: 100px;
-            margin: 0 5px;
-            background-color: lightblue;
+    justify-content: center;
+    overflow: hidden;
+    flex: 0 0 auto; 
+    width: 100px; 
+    height: 100px;
+    margin: 0 5px;
+    background:linear-gradient(120deg, #909090 , #c5c6c7);
+    border-radius: 5px;
+    transition: tranform 0.5s ease;
+    z-index: 0;
+}
+.imagem:hover{
+  cursor: pointer;
+    transform: scale(2,2); 
+    z-index: 1;
     
-
- 
-    
+}
+.imagem img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 #esponsividade{
     align-items: center;
-    position: fixed;
     left: 30px;
-    transition: width 0.2s ease;
+    transition: left 0.2s ease;
+    position:relative;
 }
-#esponsividade.active{
+#esponsividade.ativado{
     left: 300px;
-    
+    .menu-botao {left: 250px;}
   
 }
 .scroll{
