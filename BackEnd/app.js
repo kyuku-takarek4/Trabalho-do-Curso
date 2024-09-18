@@ -3,17 +3,17 @@ const app = express();
 
 // Configuração do Firebase
 const admin = require('firebase-admin');
-const serviceAccount = require('./caminho/para/seu/firebase-service-account.json');
+const serviceAccount = require('./secrets/programinhos-programantes-firebase-adminsdk-aprh8-172ea43215.json');
 
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Importar rotas
-const produtosRoutes = require('./routes/produtosRoutes');
+const usuariosRoutes = require('./rotas/RotasUsuario');
 
 // Usar rotas
-app.use('/api', produtosRoutes);
+app.use('/api', usuariosRoutes);
 
 // Iniciar o servidor
 const PORT = process.env.PORT || 3000;
