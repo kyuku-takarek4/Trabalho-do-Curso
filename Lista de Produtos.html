@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- saved from url=(0101)https://ava.sesisenai.org.br/pluginfile.php/1052837/mod_resource/content/3/Lista%20de%20Produtos.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Produtos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        .lista-produtos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .cartao-produto {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 200px;
+            padding: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cartao-produto img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+        
+        .cartao-produto h2 {
+            font-size: 18px;
+            margin: 0 0 10px;
+        }
+        
+        .cartao-produto p {
+            margin: 0;
+            color: #555;
+        }
+        
+        .cartao-produto span {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }        
+    </style>
+</head>
+<body>
+    <h1>Produtos à Venda</h1>
+    <div id="lista-produtos" class="lista-produtos"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('http://localhost:3000/api/produtos')
+                .then(response => response.json())
+                .then(produtos => {
+                    const listaProdutos = document.getElementById('lista-produtos');
+                    for(i=0; i<produtos.length; i++){
+                        const produto = produtos[i]
+                        const cartaoProduto = document.createElement('div');
+                        cartaoProduto.className = 'cartao-produto';
+                        
+                        cartaoProduto.innerHTML = `
+                            <img src="https://wx.mlcdn.com.br/ponzi/production/portaldalu/49646.jpg?ims=fit-in/960x" alt="${produto.nome}">
+                            <h2>${produto.nome}</h2>
+                            <p>${produto.descricao}</p>
+                            <span>R$ ${produto.preco}</span>
+                        `;
+                        
+                        listaProdutos.appendChild(cartaoProduto);
+                    }})
+                .catch(error => {
+                    console.error('Erro ao buscar produtos:', error);
+                });
+        });
+        
+    </script>
+
+
+</body></html>
