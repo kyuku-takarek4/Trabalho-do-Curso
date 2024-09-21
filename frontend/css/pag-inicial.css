@@ -60,6 +60,7 @@ input::placeholder{
     cursor: pointer;
     font-size: 35px;
 }
+
 #perfil {
     background-color: none;
     padding: 0;
@@ -122,6 +123,14 @@ input::placeholder{
 }
 
 
+
+
+
+
+
+
+
+
 .menu{
     height: 100%;
     width: 0;
@@ -154,6 +163,15 @@ input::placeholder{
 #estilodolink{ 
     text-decoration: none;
 }
+
+
+
+
+
+
+
+
+
 .menu-botao{
     padding: 4px 2px 2px 2px;
     background-color: #ffffff;
@@ -177,48 +195,21 @@ input::placeholder{
     border: 1px solid black ;
   
 }
+
+
+
+
+
+
+
+
+
+
 #texto-teste{
     margin-top: 120px ;
     margin-left: 14px;
     color: #d1d1d1;
 }
-/* #carrossel{
-    padding: 5px;
-    border-radius: 15px;
-    background-color: #d1d1d1;
-    width: 765px;
-    display: flex;
-    white-space: nowrap;
-    align-items: center;
-    z-index: 0;
-  
-}
-.botao-carrossel{
-    border: none;
-    border-radius: 100%;
-    background: #ffffff;
-    padding: 5px 8px;
-    cursor: pointer;
-    color: #000000;
-    transition: transform 0.2s ease ;
-    position: static;
-}
-.botao-carrossel:first-of-type{
-    margin-right:20px;
-}
-.botao-carrossel:last-of-type{
-    margin-left: 20px;
-}
-.botao-carrossel:hover{
-    transform: scale(2.2,2.2);
-    
-}
-#imagens-container {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: 100%;
-    overflow: hidden;
-}*/
 
 .container {
     display: flex;
@@ -296,6 +287,27 @@ input::placeholder{
 
 
 
+#propaganda{
+    border: 2px solid #b8000000;
+    margin-left: 350px;
+    margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -305,6 +317,7 @@ input::placeholder{
     left: 30px;
     transition: left 0.2s ease;
     position:relative;
+    display:flex ;
 }
 #esponsividade.ativado{
     left: 300px;
