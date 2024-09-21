@@ -182,7 +182,7 @@ input::placeholder{
     margin-left: 14px;
     color: #d1d1d1;
 }
-#carrossel{
+/* #carrossel{
     padding: 5px;
     border-radius: 15px;
     background-color: #d1d1d1;
@@ -191,11 +191,7 @@ input::placeholder{
     white-space: nowrap;
     align-items: center;
     z-index: 0;
-    overflow-x:auto;
-    overflow-y: hidden;
-}
-#carrossel::-webkit-scrollbar{
-    display: none;
+  
 }
 .botao-carrossel{
     border: none;
@@ -217,6 +213,30 @@ input::placeholder{
     transform: scale(2.2,2.2);
     
 }
+#imagens-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    overflow: hidden;
+}*/
+
+.container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+}
+.carrossel {
+    display: flex;
+    overflow: hidden;
+    width: 660px; 
+    
+}
+.carrossel2 {
+    display: flex;
+    overflow: hidden;
+    width: 660px; 
+}
+
 
 .imagem {
     justify-content: center;
@@ -240,7 +260,46 @@ input::placeholder{
     width: 100%;
     height: 100%;
     object-fit: cover;
+} 
+.prev{
+    background: none;
+    padding: 2px 5px;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
 }
+.next{
+    background: none;
+    padding: 2px 5px;
+    border-radius: 100%;
+    border: 1px solid #ccc; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+}
+.prev2{
+    background: none;
+    padding: 2px 5px;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+}
+.next2{
+    background: none;
+    padding: 2px 5px;
+    border-radius: 100%;
+    border: 1px solid #ccc; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
+}
+
+
+
+
+
+
+
 #esponsividade{
     align-items: center;
     left: 30px;
