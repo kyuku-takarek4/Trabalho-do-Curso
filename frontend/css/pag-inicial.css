@@ -1,5 +1,8 @@
 *{
     box-sizing: border-box;
+    max-width: 1920px;
+    align-items: center;
+
 }
 header{
     width: 100%;
@@ -10,15 +13,12 @@ header{
    
     text-decoration: none;
 }
-#bordabaixa{
-    border-bottom: #9ea0a0;
-}
 
-#navbar{
- 
-    justify-content: space-between;
-    text-decoration: none;
+header{
     display: flex;
+    flex-direction: row;
+    justify-content: space-between  ;
+    text-decoration: none;
     align-items: center;
     width: 100%;
     padding: 10px 10px 20px ; 
@@ -28,43 +28,46 @@ header{
     position: fixed;
     top: 0;
     left:0;
-    right: 0; ;
+    right: 0; 
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-
+    border-bottom: #9ea0a0;
 }  
+
 #rota-logo {
-    left: 10px;
     color: #007bff;
     font-size: 35px;
-    position: fixed;  
+
+     
+}
+.barra-e-lupa{
+    max-width:500px;
+
 }
 
 #barradepesquisa{
-    top: 20px;
-    left: 30%;
     padding: 10px 50px 10px 10px;
     border-radius: 20px;
     border: 1px solid #ced4da;
-    width:30%;
+    width: 500px;
     cursor: text;
     font-size: 10;
-    position: fixed;
+   
 }
 input::placeholder{
     color: #9ea0a0; 
 }
 #lupa{
-    top: 20px;
-    left: 61%;
-    position: fixed;
+    color: #909090  ;
     cursor: pointer;
     font-size: 35px;
+    
 }
 
 #perfil {
     background-color: none;
     padding: 0;
     border-radius: 50%;
+    margin-top: 20px;
     color: white;
     width: 50px;
     height: 50px;
@@ -139,7 +142,7 @@ input::placeholder{
     left: 0px;
     bottom: 0;
     overflow-x: hidden;
-    transition: width 0.2s ease;
+    transition: width 0.3s ease;
     background-color: #484cca;
     font-size: 20px ;
     z-index: 1000;
@@ -206,7 +209,6 @@ input::placeholder{
 
 
 #texto-teste{
-    margin-top: 120px ;
     margin-left: 14px;
     color: #d1d1d1;
 }
@@ -220,6 +222,7 @@ input::placeholder{
     display: flex;
     overflow: hidden;
     width: 660px; 
+   
     
 }
 .carrossel2 {
@@ -240,6 +243,7 @@ input::placeholder{
     border-radius: 5px;
     transition: tranform 0.5s ease;
     z-index: 0;
+    
 }
 .imagem:hover{
   cursor: pointer;
@@ -289,8 +293,14 @@ input::placeholder{
 
 #propaganda{
     border: 2px solid #b8000000;
-    margin-left: 350px;
-    margin-top: 50px;
+    margin-right:10px ;
+}
+#estrutura{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between  ;
+    margin-top:100px;
+    padding: 10px 30px 0 30px;
 }
 
 
@@ -315,9 +325,9 @@ input::placeholder{
 #esponsividade{
     align-items: center;
     left: 30px;
-    transition: left 0.2s ease;
+    transition: left 0.3s ease;
     position:relative;
-    display:flex ;
+    
 }
 #esponsividade.ativado{
     left: 300px;
@@ -325,7 +335,6 @@ input::placeholder{
   
 }
 .scroll{
-    overflow-y: scroll; 
-    overflow-x: hidden;
-    height: 2001px;
+    
+    height: 2000px;
 }
