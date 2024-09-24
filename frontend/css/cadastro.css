@@ -4,38 +4,38 @@
 
 /* Reseta algumas propriedades padrão para consistência entre navegadores */
 * {
-  margin: 0;
-  padding: 0;
+
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
 
 body {
-  background-image: url('imagens/Tela\ de\ Cadastrar.png'); /* Substitua pelo caminho correto para sua imagem */
-  background-size: cover;
-  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+
+ 
+  max-width: 1920px;
+}
+.mamo{
+  justify-content: center;
+display: flex;
+
 }
 
 .TituloDeCadastro{
   font-size: 40px; /* Tamanho grande para o título */
   color: #ffffff; /* Cor do texto */
-  top: 10%;
   letter-spacing: 2px; /* Espaçamento entre letras */
   background-color: #d1d1d1; /* Fundo do título */
   padding: 18px; /* Espaçamento interno */
   border-radius: 50px; /* Bordas arredondadas */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  left: 43.5%;
-  position: fixed;
-
+  width:280px;
+  height: 80px;
 
 }
 .cadastrop{
-  top: 200px;
+ 
 
   box-sizing: border-box;
   width: 800px;
