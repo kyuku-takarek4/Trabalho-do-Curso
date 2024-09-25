@@ -15,44 +15,49 @@
                                    <div class="cadastro">   
             <div class="texto">
                 <p>Nome</p>
-                <input type="text" id="nome" name="nome" required placeholder="Nome">
-                </div>
-                <div class="texto">
+                <input class="texto" type="text" id="nome" name="nome" required placeholder="Nome">
+                
+                
                 <p>E-mail</p>
-                <input type="email" id="email" name="email" required placeholder="E-mail">
-                </div>
-                <div class="texto">
+                <input class="texto" type="email" id="email" name="email" required placeholder="E-mail">
                 <p>Senha</p>
-                <input type="password" id="senha" name="senha" required placeholder="Senha">
-                </div>
-                <div class="texto">
+                <input class="texto" type="password" id="senha" name="senha" required placeholder="Senha">
+                
+                
                 <p>Confirmar Senha</p>    
-                <input type="password" id="confirmar_senha" name="confirmar_senha" required placeholder="Confirmar Senha">
-                </div>
-                <div class="texto">
+                <input class="texto" type="password" id="confirmar_senha" name="confirmar_senha" required placeholder="Confirmar Senha">
+                
+                
                 <p>Telefone/Contato</p>
-                <input type="text" id="telefone" name="telefone" required placeholder="(+DDD) Número">
-                </div>
-                <div class="texto">
+                <input class="texto" type="text" id="telefone" name="telefone" required placeholder="(+DDD) Número">
+                
                 <p>CNPJ</p>
-                <input type="text" id="CNPJ" name="CNPJ" required placeholder="CNPJ">
-                </div>
-                <div class="texto">
+                <input class="texto" type="text" id="cnpj" name="CNPJ" required placeholder="CNPJ">
+                
                 <p>Endereço</p>
-                <input type="text" id="Endereco" name="Endereço" required placeholder="Endereço">
-                 </div>
-                <div class="texto">
+                <input class="texto" type="text" id="endereco" name="Endereço" required placeholder="Endereço">
+                 
                 <p>Representante</p>
-                <input type="text" id="Representante" name="Representante" required placeholder="Representante">
+                <input class="texto" type="text" id="representante" name="Representante" required placeholder="Representante">
             </div>
                                     </div>
                                    <div class="botoes">
                                    <button type="submit" class="butao_de_voltar_1">Voltar</button> 
-                                   <button type="submit" class="butao_de_cadastrar">Cadastrar</button>
+                                   <button onclick="cadastrar()" class="butao_de_cadastrar">Cadastrar</button>
                                   </div>
                         </div>
                 
   </div>     
-
+                <script>
+                function cadastrar(){
+                    const nome = document.getElementById('nome').value;
+                    const email = document.getElementById('email').value;
+                    const senha = document.getElementById('senha').value;
+                    const telefone = document.getElementById('telefone').value;
+                    const cnpj = document.getElementById('cnpj').value;
+                    const endereco = document.getElementById('endereco').value;
+                    const representante = document.getElementById('representante').value;
+                }
+                </script>
 </body>
 </html>
