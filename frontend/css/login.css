@@ -25,6 +25,9 @@ body {
   justify-content: space-between;
 
 }
+#senha{
+  width: 200px;
+}
 #placeholder{
   flex-direction: column;
   display: flex;
