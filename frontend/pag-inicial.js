@@ -112,3 +112,25 @@ prevButton2.addEventListener('click', () => {
         behavior: 'smooth'
     });
 })
+const imagemSidebar = document.getElementById("imagem-sidebar");
+const imagemModal = document.getElementById("imagem-modal");
+
+// Adiciona o evento de clique a cada imagem do carrossel
+document.querySelectorAll('.imagem img').forEach(imagem => {
+    imagem.addEventListener('click', () => {
+        const src = imagem.src; // Obtém a fonte da imagem clicada
+        imagemModal.src = src; // Define a imagem do sidebar
+        imagemSidebar.style.display = 'block'; // Mostra o sidebar
+    });
+});
+
+// Fecha o sidebar ao clicar fora dele
+document.addEventListener('click', (event) => {
+    if (!imagemSidebar.contains(event.target) && !event.target.closest('.imagem')) {
+        imagemSidebar.style.display = 'none'; // Esconde o sidebar
+    }
+});
+function fecharImagemSidebar() {
+    const imagemSidebar = document.getElementById("imagem-sidebar");
+    imagemSidebar.style.display = 'none'; // Esconde o sidebar
+}
