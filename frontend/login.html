@@ -9,30 +9,69 @@
     <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
-    <div >
-         <div class="Login"><h1 class="ubuntu-light">Login</h1></div>
-         <div class="login">
-             <div id="placeholder">
-                <div class="alinhamento"><label for="email">E-mail:</label></div>
-                <input type="text" id="email" class="emailesenha" required placeholder="Digite seu email">
-                <div class="alinhamento"><label for="senha">Senha:</label></div>
+    <div>
+        <div class="Login"><h1 class="ubuntu-light">Login</h1></div>
+        <div class="login">
+            <div id="placeholder">
+                <div class="alinhamento">
+                    <label for="usuario">Usuário:</label>
+                </div>
+                <input type="text" id="usuario" class="emailesenha" required placeholder="Digite seu usuário">
+                <div class="alinhamento">
+                    <label for="senha">Senha:</label>
+                </div>
                 <input type="password" id="senha" class="emailesenha" required placeholder="Digite sua senha">
-             </div>
-             <div class="botoes">
-                  <a class="botaodevoltar"  
-                   href="???">Voltar</a>
-                 <a class="botaodeentrar"  
-                   href="./pag-inicial.html">Cadastrar</a>
-             </div>
+            </div>
+            <div class="botoes">
+                <a class="botaodevoltar" href="???">Voltar</a>
+                <button class="botaodeentrar" onclick="login()">Entrar</button>
+                
+            </div>
+            <div id="mensagemErro" style="color: red; display: none;"></div>
+        </div>
     </div>
-   
-   
 
     <script>
-        const butao = document.getElementById("butao");
-        butao.addEventListener("click", () => {
-            alert("Clicaram no botão!");
-        });
+        function login() {
+            // Captura os valores dos inputs
+            const usuario = document.getElementById('usuario').value;
+            const senha = document.getElementById('senha').value;
+
+            // Cria o objeto com os dados
+            const dadosLogin = {
+                usuario: usuario,
+                senha: senha
+            };
+
+            // Faz a solicitação POST para o backend
+            fetch('http://localhost:3000/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dadosLogin)
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('Usuário ou senha incorretos');
+            })
+            .then(data => {
+                console.log('Login bem-sucedido:', data);
+                // Aqui você pode redirecionar o usuário ou fazer outra ação
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                mostrarMensagemErro('Usuário ou senha incorretos');
+            });
+        }
+
+        function mostrarMensagemErro(mensagem) {
+            const mensagemErro = document.getElementById('mensagemErro');
+            mensagemErro.textContent = mensagem;
+            mensagemErro.style.display = 'block';
+        }
     </script>
 </body>
 </html>
