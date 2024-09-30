@@ -1,8 +1,5 @@
 *{
     box-sizing: border-box;
-    max-width: 1920px;
-    align-items: center;
-
 }
 
 #sidebar{
@@ -216,7 +213,7 @@ input::placeholder{
 }
 .carrossel {
     display: flex;
-    overflow: hidden;
+    overflow:hidden;
     width: 660px; 
    
     
@@ -230,28 +227,30 @@ input::placeholder{
 
 .imagem {
     justify-content: center;
-    overflow: hidden;
     flex: 0 0 auto; 
     width: 100px; 
-    height: 100px;
-    margin: 0 5px;
-    background:linear-gradient(120deg, #909090 , #c5c6c7);
-    border-radius: 5px;
-    transition: tranform 0.5s ease;
-    z-index: 0;
+    height: 100px; 
+    margin: 0 5px; 
+    background: linear-gradient(120deg, #909090, #c5c6c7); 
+    border-radius: 5px; 
+    transition: transform 0.5s ease; 
     
+    z-index: 5000; 
 }
 .imagem:hover{
-  cursor: pointer;
-    transform: scale(2,2); 
-    z-index: 1;
     
+    position:relative;
+    cursor: pointer;
+    transform: scale(2,2); 
+    z-index: 5005;
 }
-.imagem img{
+.imagem img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-} 
+    z-index: 35;
+}
+
 .prev{
     background: none;
     padding: 2px 5px;
