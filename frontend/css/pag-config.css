@@ -1,0 +1,165 @@
+*{
+    box-sizing: border-box;
+}
+
+ 
+
+#rota-logo {
+    color: #007bff;
+    font-size: 35px;
+}
+
+#perfil {
+    background-color: none;
+    padding: 0;
+    border-radius: 50%;
+    margin-top: 20px;
+    color: white;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    overflow: hidden;/*isso é pra deixar a img so onde eu quero */
+    cursor: pointer;
+}
+#tamanhoimagem{
+     width: 100%;
+     height: 100%;
+     object-fit: cover; /* pra cobrir o espaco todo */
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menu{
+    padding: 20px;
+    height: 100%;
+    width: 200px;
+    position:fixed;
+    top: 0;
+    left: 0px;
+    bottom: 0;
+    background-color: #393a3a;
+
+   
+}
+.menu a{
+    
+    font-size: larger ;
+    margin-left: 10px;
+    text-align: center;
+    color: aliceblue;
+    text-decoration: none;
+}
+.menu h1{
+    color: rgb(255, 255, 255);
+    margin-left: 10px}
+    
+#estilodolink{ 
+    text-decoration: none;
+    border-bottom: 1px solid rgb(137, 137, 137); /* Adiciona uma linha embaixo */
+    padding-bottom: 2px; 
+}
+#sidebar {
+    margin-bottom: 20px;
+    list-style: none;
+    text-decoration: none;
+    font-size: 15px;
+    display:flexbox;
+    justify-content: space-between;
+    
+}
+
+
+
+
+
+
+
+
+
+
+.menu-botao{
+    padding: 4px 2px 2px 2px;
+    background-color: #ffffff;
+    border:1px solid #ffffff00;
+    border-radius:0px 12px 12px 0px;
+    cursor: pointer;
+    top: 200px;
+    left: 0;
+    position: fixed;
+    transition: left 0.2s ease;
+   
+    
+}
+.menu-botao img{
+    z-index: 1%;
+    width: 22px ;
+    height: 22px;
+}
+.menu-botao:hover{
+    border: #828e9b;
+    border: 1px solid black ;
+  
+}
+
+
+
+
+
+
+
+
+
+#estrutura{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between  ;
+    margin-top:100px;
+    padding: 10px 30px 0 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#esponsividade{
+    align-items: center;
+    left: 30px;
+    transition: left 0.3s ease;
+    position:relative;
+    
+}
+#esponsividade.ativado{
+    left: 300px;
+    .menu-botao {left: 250px;}
+  
+}
+.scroll{
+    
+    height: 2000px;
+}
