@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)https://ava.sesisenai.org.br/pluginfile.php/1076575/mod_resource/content/1/exemplo%20tabelas.html -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Moradores</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #form-container {
+            margin-bottom: 20px;
+        }
+        #form-container input {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+<div id="uuidMachine">04033693-453c-4859-be26-81573c246b12</div></head>
+<body>
+    <h1 id="titulo">Tabela de Moradores - quartos null</h1>
+    
+    <div id="form-container">
+        <h2>Adicionar Morador</h2>
+        <form id="add-form">
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" required="">
+            
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required="">
+            
+            <label for="quartos">quartos:</label>
+            <input type="text" id="quartos" name="quartos" value="1" required="">
+            
+            <label for="data-nascimento">Data de Nascimento:</label>
+            <input type="text" id="data-nascimento" name="data-nascimento" placeholder="DD/MM/AAAA" required="">
+            
+            <button type="button" onclick="addRow()">Adicionar Morador</button>
+        </form>
+    </div>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>CPF</th>
+                <th>Nome</th>
+                <th>quartos</th>
+                <th>Data de Nascimento</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Linhas da tabela serão adicionadas aqui -->
+        <tr>
+                    <td>12345678910</td>
+                    <td>Rafael Siqueira</td>
+                    <td>2</td>
+                    <td>12092201</td>
+                </tr></tbody>
+    </table>
+
+    <div id="buttons">
+        <button onclick="removeRow()">Remover Morador</button>
+    </div>
+
+    <script>
+        // Pega o número do quarto no parâmetro da página e atualiza o título
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+        const quartosId = params.get('quartos');
+        document.getElementById("titulo").textContent = "Tabela de Moradores - quartos " + quartosId;
+
+        // Função para buscar e exibir a lista de moradores
+        async function loadMoradores() {
+            try {
+                const response = await fetch(`http://localhost:3000/moradores/${quartosId}`);
+                if (!response.ok) {
+                    throw new Error('Erro ao buscar dados');
+                }
+                const data = await response.json();
+                const tableBody = document.getElementById('table-body');
+                data.forEach(morador => {
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = `
+                        <td>${morador.cpf}</td>
+                        <td>${morador.nome_morador}</td>
+                        <td>${morador.quartos}</td>
+                        <td>${morador.datanascimento}</td>
+                    `;
+                    tableBody.appendChild(newRow);
+                });
+            } catch (error) {
+                console.error('Erro:', error);
+            }
+        }
+
+        // Função para adicionar uma nova linha
+        function addRow() {
+            const cpf = document.getElementById('cpf').value;
+            const nome = document.getElementById('nome').value;
+            const quartos = document.getElementById('quartos').value;
+            const dataNascimento = document.getElementById('data-nascimento').value;
+            
+            if (cpf && nome && quartos && dataNascimento) {
+                const tableBody = document.getElementById('table-body');
+                const newRow = document.createElement('tr');
+                
+                newRow.innerHTML = `
+                    <td>${cpf}</td>
+                    <td>${nome}</td>
+                    <td>${quartos}</td>
+                    <td>${dataNascimento}</td>
+                `;
+                
+                tableBody.appendChild(newRow);
+
+                // Limpa os campos do formulário após adicionar
+                document.getElementById('add-form').reset();
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        }
+
+        // Função para remover a última linha
+        function removeRow() {
+            const tableBody = document.getElementById('table-body');
+            if (tableBody.rows.length > 0) {
+                tableBody.deleteRow(tableBody.rows.length - 1);
+            } else {
+                alert("Não há mais moradores para remover.");
+            }
+        }
+
+        // Carrega os moradores ao iniciar a página
+        loadMoradores();
+    </script>
+
+
+
+
+</body></html>
