@@ -51,16 +51,20 @@
                 },
                 body: JSON.stringify(dadosLogin)
             })
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
+            async (req, res) => {
+        try {
+            const usuario = await usuarios.findOne({
+                where: {
+                    email: req.body.email // Usa o e-mail que veio do frontend
                 }
-                throw new Error('Usuário ou senha incorretos');
-            })
-            .then(data => {
-                console.log('Login bem-sucedido:', data);
-                // Aqui você pode redirecionar o usuário ou fazer outra ação
-            })
+            });
+
+            if(req.body.email == usuario.email && req.body.senha == usuario.senha){
+                res.json(usuario)
+            } else {
+                res.status(400).send('Email ou senha incorreta')
+            
+
             .catch(error => {
                 console.error('Erro:', error);
                 mostrarMensagemErro('Usuário ou senha incorretos');
@@ -75,8 +79,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
