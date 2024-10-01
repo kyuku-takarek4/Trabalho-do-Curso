@@ -40,19 +40,22 @@ body {
 }
 .cadastro {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
+  justify-content: space-between;
   height: 380px;
+  width: 700px;
  
 }
 
 .texto {
+  
+  flex-direction: column;
   margin-bottom: 100px;
   border-radius: 50px;
   border-color: #d1d1d1;
-  height: 45px;
+  height: 100px;
   padding: 10px;
-  width: 300px;
+  width: 200px;
 }
 .texto input {
   font-size: 16px;

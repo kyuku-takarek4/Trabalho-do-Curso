@@ -2,5 +2,9 @@
     .lupa-e-barra{
         width: 10px;
         background-color: aquamarine;
+        
+    }
+    body{
+        background-color: brown;
     }
 }
