@@ -31,7 +31,7 @@ body {
 
 }
 .cadastrop{
-  box-sizing: border-box;
+ 
   width: 800px;
   border:3px solid #d1d1d1; /* Fundo branco com opacidade */
   border-radius: 35px;
@@ -39,21 +39,26 @@ body {
   padding-bottom:70px;
 }
 .cadastro {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+   
   height: 380px;
   width: 700px;
+  border:2px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
  
+}
+.cadastro div{
+  width: 100px;
+  height: auto;
 }
 
 .texto {
   
-  flex-direction: column;
-  margin-bottom: 100px;
+  margin-bottom: 20px;
   border-radius: 50px;
-  border-color: #d1d1d1;
-  height: 100px;
+  border-color:2px #d1d1d1;
+  height: 50px;
   padding: 10px;
   width: 200px;
 }
