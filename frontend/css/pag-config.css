@@ -1,33 +1,68 @@
 *{
     box-sizing: border-box;
+    max-width:1920px ;
 }
 
  body{
+    margin-left: 200px;
+    max-width:1920px ;
     background-color: #323232;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    position: relative;
  }
+#perfil2{
+    width: 210px;
+    height: 210px;
+    border: none;
+    border-radius: 50%;
+    justify-content: center ;
+    align-items: center;
+    display: flex;
+    
+}
+#perfil2:hover{
+    background-color: white;
 
-#rota-logo {
-    color: #007bff;
-    font-size: 35px;
 }
 
 #perfil {
     background-color: none;
     padding: 0;
     border-radius: 50%;
-    margin-top: 20px;
     color: white;
-    width: 50px;
-    height: 50px;
+    width: 200px;
+    height: 200px;
     justify-content: center;
     overflow: hidden;/*isso é pra deixar a img so onde eu quero */
     cursor: pointer;
 }
+
 #tamanhoimagem{
      width: 100%;
      height: 100%;
      object-fit: cover; /* pra cobrir o espaco todo */
+     z-index: 2px;
+    
+}
+#tamanhoimagem2{
+    object-fit: cover; /* pra cobrir o espaco todo */
+}
+#descricao textarea{
+    background-color: #4b4b4b;
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+    width: 200px;
+    height: 40px;
+    resize: none;
+}
+#lapis{
+    width: 15px;
+    height: 15px;
+    color: #d1d1d1;
     
 }
 
@@ -43,8 +78,10 @@
 
 
 
-.menu{
-    
+.menu{ 
+    position: fixed;
+    padding-top: 20px;
+    padding-left: 20px;
     height: 100%;
     width: 200px;
     position:fixed;
@@ -52,27 +89,19 @@
     left: 0px;
     bottom: 0;
     background-color: #323232;
-    border-right: 2px solid #d1d1d1;
+    border-right: 1px solid #d1d1d1;
 }
-.menu a{
-    padding: 20px;
-    font-size: larger ;
-    margin-left: 10px;
-    text-align: center;
-    color: aliceblue;
-    text-decoration: none;
-}
+
 .menu h1{
     color: rgb(255, 255, 255);
     margin-left: 10px}
     
 #estilodolink{ 
     text-decoration: none;
-    border-bottom: 1px solid rgb(137, 137, 137); /* Adiciona uma linha embaixo */
-    padding-bottom: 2px; 
+   
 }
 #sidebar {
-    margin-bottom: 20px;
+    
     list-style: none;
     text-decoration: none;
     font-size: 15px;
@@ -80,16 +109,28 @@
     flex-direction: column;
 }
 #sidebar li{
-    margin-bottom: 70px;
+    margin-bottom: 50px;
     border-bottom: 1px solid #d1d1d1;
-    padding: 20px;
-    width: 200px;
+    padding: 5px;
 }
 #sidebar a{ 
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    color: aliceblue;
+    text-decoration: none;
 }
-
-
+#Configuracoes {
+    color: #d1d1d1;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+#Perfil-sidebar{
+    margin-bottom: 50px;
+    border-bottom: 1px solid #d1d1d1;
+    padding: 5px;
+    color: aliceblue;
+    text-decoration: none;
+    border-bottom: 2px solid #d1d1d1;
+}
 
 
 
