@@ -4,7 +4,7 @@ const UsuarioController = {
     createUsuario: async (req, res) => {
         try {
             console.log(db);
-            const UsuarioRef = db.collection('Usuarios').doc();
+            const UsuarioRef = db.collection('usuarios').doc();
             await UsuarioRef.set(req.body);
             res.status(201).json({ id: UsuarioRef.id, ...req.body });
         } catch (error) {
@@ -14,7 +14,7 @@ const UsuarioController = {
 
     getAllUsuarios: async (req, res) => {
         try {
-            const UsuariosSnapshot = await db.collection('Usuarios').get();
+            const UsuariosSnapshot = await db.collection('usuarios').get();
             const Usuarios = [];
             UsuariosSnapshot.forEach(doc => {
                 Usuarios.push({ id: doc.id, ...doc.data() });
@@ -27,7 +27,7 @@ const UsuarioController = {
 
     getUsuarioById: async (req, res) => {
         try {
-            const UsuarioRef = db.collection('Usuarios').doc(req.params.id);
+            const UsuarioRef = db.collection('usuarios').doc(req.params.id);
             const doc = await UsuarioRef.get();
             if (!doc.exists) {
                 res.status(404).send('Usuario não encontrado');
@@ -41,7 +41,7 @@ const UsuarioController = {
 
     updateUsuario: async (req, res) => {
         try {
-            const UsuarioRef = db.collection('Usuarios').doc(req.params.id);
+            const UsuarioRef = db.collection('usuarios').doc(req.params.id);
             await UsuarioRef.update(req.body);
             res.status(200).send('Usuario atualizado com sucesso');
         } catch (error) {
@@ -51,7 +51,7 @@ const UsuarioController = {
 
     deleteUsuario: async (req, res) => {
         try {
-            const UsuarioRef = db.collection('Usuarios').doc(req.params.id);
+            const UsuarioRef = db.collection('usuarios').doc(req.params.id);
             await UsuarioRef.delete();
             res.status(200).send('Usuario deletado com sucesso');
         } catch (error) {
