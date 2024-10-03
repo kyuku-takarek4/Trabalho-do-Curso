@@ -1,6 +1,6 @@
 var admin = require("firebase-admin");
 
-var serviceAccount = require("./secrets/programinhos-programantes-firebase-adminsdk-aprh8-b94e5c3b3c.json");
+var serviceAccount = require("../secrets/banco-de-bagos-firebase-adminsdk-ao45g-72977226b0.json");
 
 admin.initializeApp({credential: admin.credential.cert(serviceAccount)});
 const db = admin.firestore();
