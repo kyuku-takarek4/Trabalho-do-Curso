@@ -134,3 +134,30 @@ function fecharImagemSidebar() {
     const imagemSidebar = document.getElementById("imagem-sidebar");
     imagemSidebar.style.display = 'none'; // Esconde o sidebar
 }
+
+// Busca lista de empresas
+fetch('http://localhost:3000/empresas')
+    .then(response => response.json())
+    .then(listaEmpresasBackend => {
+        const carrossel = document.getElementById('carrossel')
+
+        for (i=0; i<listaEmpresasBackend.length; i++){
+            const empresa = listaEmpresasBackend[i]
+
+            const caixinha = document.createElement('div');
+            caixinha.className = 'imagem';
+            
+            caixinha.innerHTML = `
+                <img src="${empresa.link_imagem}" alt="${produto.nome}" onclick="clickEmpresa('${JSON.stringify(empresa)}')">
+            `;
+            
+            carrossel.appendChild(caixinha);
+        }
+    })
+    .catch(error => {
+        console.error('Erro ao buscar produtos:', error);
+    });
+
+function clickEmpresa(empresa){
+    alert(empresa)
+}

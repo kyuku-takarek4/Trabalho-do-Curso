@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <title>pagina inicial</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/pag-inicial.css">
     <link rel="stylesheet" href="css/pag-inicial-media.css">
     <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
-<body >
+
+<body>
     <div id="imagem-sidebar" class="sidebar-imagem" style="display: none;">
         <button id="fechar-imagem" onclick="fecharImagemSidebar()">X</button>
         <img id="imagem-modal" src="" alt="Imagem" />
@@ -19,124 +23,112 @@
         <button id="salvar-texto">Salvar Texto</button>
     </div>
     <div class="scroll">
-    <header id="bordabaixa">
-        
-        <i id="rota-logo" class="fa-solid fa-route">Blu</i> 
-          <div id="lupa-e-barra">
-          <input type="text" id="barradepesquisa" placeholder="Digite sua pesquisa aqui">
-          <i id="lupa" class="fa-solid fa-magnifying-glass"></i>
-          </div>
-        <button id="perfil" onclick="sidebarPerfil()" >
-            <img id="tamanhoimagem" src="https://i.pinimg.com/originals/fe/ca/b1/fecab1f731c42e9af0c86504f791de0d.jpg">
-        </button    >
-        
+        <header id="bordabaixa">
 
-</header>
+            <i id="rota-logo" class="fa-solid fa-route">Blu</i>
+            <div id="lupa-e-barra">
+                <input type="text" id="barradepesquisa" placeholder="Digite sua pesquisa aqui">
+                <i id="lupa" class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <button id="perfil" onclick="sidebarPerfil()">
+                <img id="tamanhoimagem"
+                    src="https://i.pinimg.com/originals/fe/ca/b1/fecab1f731c42e9af0c86504f791de0d.jpg">
+            </button>
 
-    <div id="perfil-sidebar" class="sidebar-perfil">
-        <ul class="ubuntu-light">
-            <li><a>Perfil</a></li>
-            <li><a>bbbbbb</a></li>
-            <li><a>Configurações</a></li>
-        </ul>
+
+        </header>
+
+        <div id="perfil-sidebar" class="sidebar-perfil">
+            <ul class="ubuntu-light">
+                <li><a>Perfil</a></li>
+                <li><a>bbbbbb</a></li>
+                <li><a>Configurações</a></li>
+            </ul>
+        </div>
+        <div id="menu-sidebar" class="menu">
+            <ul id="sidebar">
+                <li>
+                    <h1 id="menu">Menu</h1>
+                </li>
+                <li>
+                    <a id="estilodolink" href="https://youtu.be/PwBeBIvxSRw">mm</a>
+                </li>
+                <li>
+                    <a href="">teste</a>
+                </li>
+                <li>
+                    <a href="">teste</a>
+                </li>
+                <li>
+                    <a href="">teste</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div id="esponsividade">
+            <div>
+                <div class="menu-botao" onclick="toggleSidebar()">
+                    <img src="./imagens/menu-de-tres-linhas.png" alt="Menu">
+                </div>
+            </div>
+            <div id="estrutura">
+                <div>
+                    <div id="texto-teste" class="ubuntu-light">teste</div>
+                    <div class="container">
+                        <button class="prev"><</button>
+                                <div class="carrossel" id="carrossel">
+                                    <div class="imagem"><img
+                                            src="https://i.pinimg.com/736x/3d/78/aa/3d78aa4f8b00c07d60a83777bde09d89.jpg"
+                                            alt="imagem 1"></div>
+                                            
+                                </div>
+                                <button class="next">></button>
+                    </div>
+                    <div id="texto-teste" class="ubuntu-light">teste 2</div>
+                    <div class="container">
+                        <button class="prev2"><</button>
+                                <div class="carrossel2">
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 1"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 2"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 3"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 4"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 5"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 6"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 7"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 8"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 9"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 10"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 11"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 12"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 13"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 14"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 15"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 16"></div>
+                                    <div class="imagem"><img src="./imagens/image.png" alt="imagem 17"></div>
+                                    <div class="imagem"><img src="./imagens/image18.png" alt="imagem 18"></div>
+                                </div>
+                                <button class="next2">></button>
+                    </div>
+                </div>
+                <div id="propaganda">
+                    <img src="./imagens/propaganda.png" alt="">
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <script src="pag-inicial.js"></script>
     </div>
-<div id="menu-sidebar" class="menu">
-    <ul id="sidebar">
-        <li>
-            <h1 id="menu">Menu</h1>
-        </li>
-        <li>
-            <a id="estilodolink" href="https://youtu.be/PwBeBIvxSRw">mm</a>
-        </li>
-        <li>
-            <a href="">teste</a>
-        </li>
-        <li>
-            <a href="">teste</a>
-        </li>
-        <li>
-            <a href="">teste</a>
-        </li>
-    </ul>
-</div>
-
-
-
-<div id="esponsividade" >
- <div>
-    <div class="menu-botao" onclick="toggleSidebar()">
-        <img src="./imagens/menu-de-tres-linhas.png" alt="Menu">
-    </div>
- </div>
- <div id="estrutura">
-     <div>
-              <div id="texto-teste" class="ubuntu-light">teste</div>
-               <div class="container">
-    <button class="prev"><</button>
-     <div class="carrossel">
-       <div class="imagem"><img src="https://i.pinimg.com/736x/3d/78/aa/3d78aa4f8b00c07d60a83777bde09d89.jpg" alt="imagem 1"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/564x/64/c0/d7/64c0d7da043d2b9b60d27623b0b938ba.jpg" alt="imagem 2"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/49/f6/00/49f600582035d7db0488e411954eb094.jpg" alt="imagem 3"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/e7/5d/b5/e75db5d8549eee899ca30cbbd32742ef.jpg" alt="imagem 4"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/9d/d4/4a/9dd44acadad8b46fd66688f4144a7ba0.jpg" alt="imagem 5"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/564x/03/05/8e/03058efeb7b7a7910a535a389f53e45b.jpg" alt="imagem 6"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/05/3a/a6/053aa6f00caa7daef5cc6cd5247c1946.jpg" alt="imagem 7"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/a5/df/e7/a5dfe7c42afe20faba0cdc6b6c4ac5d3.jpg" alt="imagem 8"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/a4/10/d8/a410d840508d6ced8e0f4d19a27e3304.jpg" alt="imagem 9"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/3b/43/a3/3b43a306dd60c1a775b3cf6b8f2e89be.jpg" alt="imagem 10"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/94/db/6c/94db6c6a5fcb8da634d5aa9e778348e2.jpg" alt="imagem 11"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/07/e1/d6/07e1d65b6de58761cf53b57ddcaa1c7b.jpg" alt="imagem 12"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/d7/30/1c/d7301ccd770802fa0a895043ac80edb6.jpg" alt="imagem 13"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/d5/bd/03/d5bd03c1a7e1b977f8dd343d077e651b.jpg" alt="imagem 14"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/2f/1c/39/2f1c397ec655a618d7067f4fedd34290.jpg" alt="imagem 15"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/9e/eb/c6/9eebc6ad4337f052d3e2438a683ff1bb.jpg" alt="imagem 16"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/736x/26/2b/0e/262b0e09c642bf210760d454d40eaf36.jpg" alt="imagem 17"></div>
-       <div class="imagem"><img src="https://i.pinimg.com/564x/00/58/92/005892cdfc76bfecf53c14e9592fba8e.jpg" alt="imagem 18"></div>
-    </div>
-   <button class="next">></button>
-               </div>
-               <div id="texto-teste" class="ubuntu-light">teste 2</div>
-               <div class="container">
-          <button class="prev2"><</button>
-           <div class="carrossel2">
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 1"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 2"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 3"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 4"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 5"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 6"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 7"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 8"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 9"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 10"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 11"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 12"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 13"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 14"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 15"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 16"></div>
-             <div class="imagem"><img src="./imagens/image.png" alt="imagem 17"></div>
-             <div class="imagem"><img src="./imagens/image18.png" alt="imagem 18"></div>
-          </div>
-         <button class="next2">></button>
-               </div>
-     </div>
-     <div id="propaganda">
-        <img src="./imagens/propaganda.png" alt="">
-       
-     </div>
- </div>
-</div>
-
-
-
-
-
-
-
-
-
-<script src="pag-inicial.js"></script>
-</div>
 </body>
+
 </html>
