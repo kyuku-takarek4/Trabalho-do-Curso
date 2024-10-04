@@ -57,7 +57,24 @@ const UsuarioController = {
         } catch (error) {
             res.status(500).send(error.message);
         }
+    },
+
+    login: async (req, res) => {
+        try {
+            const doc = db.collection('usuarios').where('nome', '==', req.body.nome).get();
+            if (!doc.exists) {
+                res.status(404).send('Usuario não encontrado');
+            } else {
+                if (req.body.senha == doc.senha) {
+                    res.status(200).json({ id: doc.id, ...doc.data() });
+                } else {
+                    res.status(400).send('Email ou senha incorreta')
+                }
+            }
+        } catch (error) {
+            res.status(500).send(error.message);
+        }
     }
-};
+}
 
 module.exports = UsuarioController;

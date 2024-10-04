@@ -45,31 +45,17 @@
 
             // Faz a solicitação POST para o backend
             fetch('http://localhost:3000/api/usuario', {
-                method: 'GET',
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(dadosLogin)
             })
-            async (req, res) => {
-        try {
-            const usuario = await usuarios.findOne({
-                where: {
-                    email: req.body.email // Usa o e-mail que veio do frontend
-                }
-            });
-
-            if(req.body.email == usuario.email && req.body.senha == usuario.senha){
-                res.json(usuario)
-            } else {
-                res.status(400).send('Email ou senha incorreta')
-            
-
-            .catch(error => {
-                console.error('Erro:', error);
-                mostrarMensagemErro('Usuário ou senha incorretos');
-            });
-        }
+            .then(resposta => resposta.json())
+            .then(usuario => {
+                alert('Bem vindo!')
+                window.location.href = "pag-inicial.html"
+            })
 
         function mostrarMensagemErro(mensagem) {
             const mensagemErro = document.getElementById('mensagemErro');

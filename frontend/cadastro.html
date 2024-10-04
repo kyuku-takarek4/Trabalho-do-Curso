@@ -47,7 +47,7 @@
     </div>
 </div>
                     <div class="botoes">
-                        <button type="submit" class="butao_de_voltar_1">Voltar</button> 
+                        <button class="butao_de_voltar_1">Voltar</button> 
                         <button onclick="cadastrar()" class="butao_de_cadastrar">Cadastrar</button>
                     </div>
         </div>
@@ -87,15 +87,9 @@
                     throw new Error('Erro ao cadastrar a pessoa');
                 })
                 .then(data => {
-                    console.log('Pessoa cadastrada com sucesso:', data);
+                    alert('Seja bem vindo!');
                     // Limpar os campos de entrada após o envio
-                    document.getElementById('nome').value = '';
-                    document.getElementById('email').value = '';
-                    document.getElementById('senha').value = '';
-                    document.getElementById('telefone').value = '';
-                    document.getElementById('cnpj').value = '';
-                    document.getElementById('endereco').value = '';
-                    document.getElementById('representante').value = '';
+                    window.location.href = "login.html"
                 })
                 .catch(error => {
                     console.error('Erro:', error);
