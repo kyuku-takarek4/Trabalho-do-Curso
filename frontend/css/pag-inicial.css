@@ -299,6 +299,9 @@ input::placeholder{
     z-index: 10010; 
     padding: 10px; 
 }
+.sidebar-imagem textarea{
+    resize: none;
+}
 
 #imagem-modal {
     width: 200px; 
