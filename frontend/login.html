@@ -23,9 +23,8 @@
                 <input type="password" id="senha" class="emailesenha" required placeholder="Digite sua senha">
             </div>
             <div class="botoes">
-                <a class="botaodevoltar" href="???">Voltar</a>
+                <a class="botaodevoltar" href="javascript:history.back()">Voltar</a>
                 <button class="botaodeentrar" onclick="login()">Entrar</button>
-                
             </div>
             <div id="mensagemErro" style="color: red; display: none;"></div>
         </div>
@@ -36,6 +35,12 @@
             // Captura os valores dos inputs
             const usuario = document.getElementById('usuario').value;
             const senha = document.getElementById('senha').value;
+
+            // Verifica se os campos estão preenchidos
+            if (!usuario || !senha) {
+                mostrarMensagemErro('Por favor, preencha todos os campos.');
+                return;
+            }
 
             // Cria o objeto com os dados
             const dadosLogin = {
@@ -51,11 +56,20 @@
                 },
                 body: JSON.stringify(dadosLogin)
             })
-            .then(resposta => resposta.json())
-            .then(usuario => {
-                alert('Bem vindo!')
-                window.location.href = "pag-inicial.html"
+            .then(resposta => {
+                if (!resposta.ok) {
+                    throw new Error('Usuário ou senha inválidos.');
+                }
+                return resposta.json();
             })
+            .then(usuario => {
+                alert('Bem-vindo!');
+                window.location.href = "pag-inicial.html";
+            })
+            .catch(error => {
+                mostrarMensagemErro(error.message);
+            });
+        }
 
         function mostrarMensagemErro(mensagem) {
             const mensagemErro = document.getElementById('mensagemErro');
