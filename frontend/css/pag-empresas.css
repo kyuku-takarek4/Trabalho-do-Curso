@@ -22,14 +22,15 @@
 
 
 #perfil {
-    background-color: none;
+    background: linear-gradient(120deg, #909090, #c5c6c7); 
     padding: 0;
-    color: white;
     width: 200px;
     height: 200px;
     justify-content: center;
     overflow: hidden;/*isso é pra deixar a img so onde eu quero */
     cursor: pointer;
+    position: relative;
+    z-index: 1px;
 }
 
 #tamanhoimagem{
@@ -37,6 +38,7 @@
      height: 100%;
      object-fit: cover; /* pra cobrir o espaco todo */
      z-index: 2px;
+     position: relative;
     
 }
 #tamanhoimagem2{
