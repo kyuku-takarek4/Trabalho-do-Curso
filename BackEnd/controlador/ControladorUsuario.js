@@ -61,20 +61,23 @@ const UsuarioController = {
 
     login: async (req, res) => {
         try {
-            const doc = db.collection('usuarios').where('nome', '==', req.body.nome).get();
-            if (!doc.exists) {
+            const doc = await db.collection('usuarios').where('email', '==', req.body.usuario).limit(1).get()
+            if (doc.empty) {
                 res.status(404).send('Usuario não encontrado');
             } else {
-                if (req.body.senha == doc.senha) {
-                    res.status(200).json({ id: doc.id, ...doc.data() });
+                const data = doc.docs[0].data()
+                console.log(data);
+
+                if (req.body.senha == data.senha) {
+                    res.status(200).json({ id: data.id, ...data });
                 } else {
                     res.status(400).send('Email ou senha incorreta')
                 }
             }
-        } catch (error) {
-            res.status(500).send(error.message);
-        }
+        } catch(error) {
+        res.status(500).send(error.message);
     }
+}
 }
 
 module.exports = UsuarioController;
