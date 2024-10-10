@@ -63,6 +63,8 @@
                 return resposta.json();
             })
             .then(usuario => {
+                console.log(usuario);
+                localStorage.setItem('usuario', usuario.id)
                 alert('Bem-vindo!');
                 window.location.href = "pag-inicial.html";
             })
