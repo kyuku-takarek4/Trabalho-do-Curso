@@ -66,10 +66,9 @@ const UsuarioController = {
                 res.status(404).send('Usuario não encontrado');
             } else {
                 const data = doc.docs[0].data()
-                console.log(data);
 
                 if (req.body.senha == data.senha) {
-                    res.status(200).json({ id: data.id, ...data });
+                    res.status(200).json({ id: doc.docs[0].id, ...data });
                 } else {
                     res.status(400).send('Email ou senha incorreta')
                 }
