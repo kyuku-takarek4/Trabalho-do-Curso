@@ -71,13 +71,31 @@ body {
 .botoes{
   display: flex;
   position: relative;
-  width: 200px;
+  height: 100px;
+  width: 22220px;
   z-index: 1px;
   left: 100px;
+  top: 50px;
  
 }
 .butao_de_cadastrar {
-  margin-left:410px;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px 15px 10px ;
+  background: linear-gradient(45deg, #4fa4ff, #3de2ff );
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 50px;
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: background-color 0. 3s ease;
+  margin-top: 20px;
+  margin-bottom:20px;
+  width: 180px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
+  /* margin-left:410px;
   padding: 15px 30px;
   font-weight: bolder;
   font-size: 20px;
@@ -88,8 +106,7 @@ body {
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384); */
 
 }
 
@@ -98,7 +115,23 @@ body {
 }
 
 .butao_de_voltar_1 {
-  margin-left:-100px ;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px 15px 10px ;
+  background: linear-gradient(45deg, #4fa4ff, #3de2ff );
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 50px;
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: background-color 0. 3s ease;
+  margin-top: 20px;
+  margin-bottom:20px;
+  width: 100px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
+  /* margin-left:-100px ;
   padding: 15px 30px;
   font-weight: bolder;
   font-size: 20px;
@@ -107,9 +140,8 @@ body {
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 50px;
-  cursor: pointer;
   transition: background-color 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.38260);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.38260); */
 }
 
 .butao_de_voltar_1:hover {
