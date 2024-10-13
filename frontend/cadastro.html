@@ -28,6 +28,9 @@
     <div>
         <p>Confirmar Senha</p>
         <input class="texto" type="password" id="confirmar_senha" name="confirmar_senha"  placeholder="Confirmar Senha" required>
+    </div> 
+    <div>
+        <span id="errorMessage" class="error"></span> <!-- Local onde a mensagem de erro será exibida -->
     </div>
     <div>
         <p>Telefone/Contato</p>
@@ -48,13 +51,45 @@
 </div>
                     <div class="botoes">
                         <button class="butao_de_voltar_1">Voltar</button> 
-                        <button onclick="cadastrar()" class="butao_de_cadastrar">Cadastrar</button>
+                        <button onclick="submitForm()" class="butao_de_cadastrar">Cadastrar</button>
                     </div>
         </div>
                 
   </div>     
                 <script>
-                function cadastrar(){
+                    function verificar(){
+                        const password = document.getElementById("senha").value;
+                        const confirmPassword = document.getElementById("confirmar_senha").value;
+                        const errorMessage = document.getElementById("errorMessage");
+
+                    if (senha !== confirmar_senha) {
+                        errorMessage.textContent = "As senhas não coincidem."
+                return false;
+                     }
+
+                     errorMessage.textContent = "";
+            return true;
+                        }
+                        // Função para enviar o formulário, após validar as senhas e os campos obrigatórios
+          function submitForm() {
+              const form = document.querySelector('form');
+
+            // Verifica se o formulário é válido
+                if (!form.checkValidity()) {
+                form.reportValidity(); // Mostra as mensagens de erro nativas do HTML5
+                return;  // Interrompe o envio
+              }
+
+            // Verifica se as senhas coincidem
+              if (!verificar()) {
+                return;  // Interrompe o envio se as senhas forem diferentes
+              }
+
+               // Se tudo estiver correto, chama a função de cadastro
+              cadastrar();
+            }
+
+                        function cadastrar(){
                     const nome = document.getElementById('nome').value;
                     const email = document.getElementById('email').value;
                     const senha = document.getElementById('senha').value;
@@ -95,6 +130,6 @@
                     console.error('Erro:', error);
                 });
                 }
-                </script>
+                    </script>
 </body>
 </html>
