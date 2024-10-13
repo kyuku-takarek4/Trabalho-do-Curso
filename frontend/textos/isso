@@ -1,0 +1,5 @@
+if(empresa.imagem == undefined){
+    asdasdasw("/imagens/image.png")
+} else {
+    fjksahfkljsd(empresa.imagem)
+}
