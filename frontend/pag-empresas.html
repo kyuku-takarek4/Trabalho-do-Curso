@@ -69,17 +69,19 @@
         // Puxar os dados do banco de dados com o ID do usuário
         fetch(`http://localhost:3000/api/usuarios/${usuario.id}`)
         .then(resposta => {
-            if (!resposta.ok) throw new Error('Erro ao obter dados do usuário.');
-            return resposta.json();
+            console.log(resposta); // Ver a resposta completa
+            return resposta.text(); // Mude para text() para ver o corpo da resposta
         })
-        .then(dados => {
+        .then(texto => {
+            console.log(texto); // Veja o que está retornando
+            const dados = JSON.parse(texto); // Tente converter para JSON aqui
             // Preencher os campos com os dados obtidos
             document.getElementById('nome').value = dados.nome;
             document.getElementById('telefone').value = dados.telefone;
             document.getElementById('endereco').value = dados.endereco;
             document.getElementById('cnpj').value = dados.cnpj;
             document.getElementById('representante').value = dados.representante;
-            document.getElementById('descricao').value = dados.descricao; // Novo campo
+            document.getElementById('descricao').value = dados.descricao;
         })
         .catch(error => {
             console.error(error);
