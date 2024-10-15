@@ -160,6 +160,9 @@ input::placeholder{
 #estilodolink{ 
     text-decoration: none;
 }
+#sidebar li{
+    margin-bottom: 30px;
+}
 
 
 
