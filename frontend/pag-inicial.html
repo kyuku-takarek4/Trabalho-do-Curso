@@ -17,13 +17,20 @@
 <body>
     <div id="imagem-sidebar" class="sidebar-imagem" style="display: none;">
         <button id="fechar-imagem" onclick="fecharImagemSidebar()">X</button>
-        <img id="imagem-modal" src="" alt="Imagem" />
-        <p id="descricao-modal"></p>
-        <textarea placeholder="Descriçao..."></textarea>
-        <textarea placeholder="Usuario..."></textarea>
-        <textarea placeholder="Contato..."></textarea>
-        <textarea placeholder="Email..."></textarea>
-        <button id="salvar-texto">Salvar Texto</button>
+        <div id="divisao">
+        <div><img id="imagem-modal" src="" alt="Imagem" /></div>
+        <div id="borda-texto">
+           <ul class="descricao" >
+
+            <li><input type="text" id="nome" placeholder="Nome" required></li>
+            <li><input type="text" id="telefone" placeholder="Telefone" required></li>
+            <li><input type="text" id="endereco" placeholder="Endereço" required></li>
+            <li><input type="text" id="representante" placeholder="Representante" required></li>
+            <h2>Descrição:</h2>
+            <li><textarea id="descricao" placeholder="" required></textarea></li>
+          </ul>
+         </div>
+        </div>
     </div>
     <div class="scroll">
         <header id="bordabaixa">
