@@ -1,0 +1,97 @@
+/* Reseta algumas propriedades padrão para consistência entre navegadores */
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    max-width: 1920px;
+  }
+  
+  .mamo {
+    justify-content: center;
+    display: flex;
+  }
+  
+  .TituloDeCadastro {
+    display: flex;
+    justify-content: center;
+    font-size: 40px; /* Tamanho grande para o título */
+    color: #ffffff; /* Cor do texto */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    background-color: #d1d1d1; /* Fundo do título */
+    padding: 18px; /* Espaçamento interno */
+    border-radius: 50px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  }
+  
+  .cadastrop {
+    width: 790px;
+    border: 3px solid #d1d1d1; /* Fundo branco com opacidade */
+    border-radius: 35px;
+    padding: 50px;
+    padding-bottom: 70px;
+  }
+  
+  .cadastro {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que os elementos quebrem linha */
+    gap: 20px;
+    justify-content: space-between; /* Espaçamento entre as colunas */
+  }
+  
+  .cadastro div {
+    width: calc(50% - 20px); /* Largura de 50% para duas colunas, com espaçamento */
+  }
+  
+  .texto {
+    margin-bottom: 20px;
+    border-radius: 50px;
+    border: 2px solid #d1d1d1;
+    height: 50px;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .botoes {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 100px;
+    width: 660px;
+    z-index: 1;
+    left: 4px;
+    top: 50px;
+  }
+  
+  .butao_de_cadastrar,
+  .butao_de_voltar_1 {
+    text-decoration: none;
+    text-align: center;
+    padding: 15px 15px 10px;
+    background: linear-gradient(45deg, #4fa4ff, #3de2ff);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 50px;
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 180px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.384);
+  }
+  
+  .butao_de_cadastrar:hover,
+  .butao_de_voltar_1:hover {
+    background-color: #4fa4ff;
+  }
+  
+  input::placeholder {
+    color: #d1d1d1;
+  }
+  
