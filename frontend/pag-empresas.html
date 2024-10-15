@@ -14,8 +14,6 @@
             <div><img id="tamanhoimagem" src="./imagens/image.png"></div> 
         </div>
 
-        <div class="descricao">
-            <textarea class="texto-sidebar" id="nome" placeholder="Nome do Usuário..."></textarea>
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 485.219 485.22">
                     <g>
@@ -23,18 +21,20 @@
                     </g>
                 </svg>
             </div>
-        </div>
+        
 
-        <div id="alterarDados" class="descricao"> 
-            <h3>Alterar Dados da Empresa</h3>
-            <input type="text" id="nome" placeholder="Nome" required>
-            <input type="text" id="telefone" placeholder="Telefone" required>
-            <input type="text" id="endereco" placeholder="Endereço" required>
-            <input type="text" id="cnpj" placeholder="CNPJ" required>
-            <input type="text" id="representante" placeholder="Representante" required>
-            <textarea id="descricao" placeholder="Descrição da Empresa..." required></textarea>
-            <button onclick="alterarDados()">Alterar Dados</button>
-            <div id="mensagemErro" style="display:none; color:red;"></div>
+        <div id="alterarDados" > 
+            <ul class="descricao" >
+
+                <li><input type="text" id="nome" placeholder="Nome" required></li>
+                <li><input type="text" id="telefone" placeholder="Telefone" required></li>
+                <li><input type="text" id="endereco" placeholder="Endereço" required></li>
+                <li><input type="text" id="cnpj" placeholder="CNPJ" required></li>
+                <li><input type="text" id="representante" placeholder="Representante" required></li>
+                <li><textarea id="descricao" placeholder="Descrição da Empresa..." required></textarea></li>
+                <li><button onclick="alterarDados()">Alterar Dados</button></li>s
+           </ul>
+           <div id="mensagemErro" style="display:none; color:red;"></div>
         </div>
     </div>
 
@@ -44,16 +44,16 @@
                 <i>Configurações</i> 
             </div>
             <li id="Perfil-sidebar">
-                <a id="estilodolink" href="https://youtu.be/PwBeBIvxSRw">Alterar Dados</a>
+                <a id="estilodolink" href="./pag-empresas.html">Alterar Dados</a>
             </li>
             <li id="Empresas-sidebar">
-                <a href="">Empresa</a>
+                <a href="">Privacidade</a>
             </li>
             <li>
-                <a href="">teste</a>
+                <a href="">Suporte</a>
             </li>
             <li>
-                <a href="">teste</a>
+                <a href="">Sair</a>
             </li>
         </ul>
     </div>
@@ -63,72 +63,7 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const usuario = JSON.parse(localStorage.getItem('usuario'));
-    if (usuario) {
-        // Puxar os dados do banco de dados com o ID do usuário
-        fetch(`http://localhost:3000/api/usuarios/${usuario.id}`)
-        .then(resposta => {
-            console.log(resposta); // Ver a resposta completa
-            return resposta.text(); // Mude para text() para ver o corpo da resposta
-        })
-        .then(texto => {
-            console.log(texto); // Veja o que está retornando
-            const dados = JSON.parse(texto); // Tente converter para JSON aqui
-            // Preencher os campos com os dados obtidos
-            document.getElementById('nome').value = dados.nome;
-            document.getElementById('telefone').value = dados.telefone;
-            document.getElementById('endereco').value = dados.endereco;
-            document.getElementById('cnpj').value = dados.cnpj;
-            document.getElementById('representante').value = dados.representante;
-            document.getElementById('descricao').value = dados.descricao;
-        })
-        .catch(error => {
-            console.error(error);
-            mostrarMensagemErro('Erro ao carregar os dados do usuário.');
-        });
-    }
-});
-
-        function alterarDados() {
-            const nome = document.getElementById('nome').value;
-            const telefone = document.getElementById('telefone').value;
-            const endereco = document.getElementById('endereco').value;
-            const cnpj = document.getElementById('cnpj').value;
-            const representante = document.getElementById('representante').value;
-            const descricao = document.getElementById('descricao').value;
-
-            // Validação dos campos
-            if (!nome || !telefone || !endereco || !cnpj || !representante || !descricao) {
-                mostrarMensagemErro('Por favor, preencha todos os campos.');
-                return;
-            }
-
-            const dadosAtualizacao = { nome, telefone, endereco, cnpj, representante, descricao };
-            const id = JSON.parse(localStorage.getItem('usuario')).id; // Pegar o ID do usuário
-
-            fetch(`http://localhost:3000/api/usuarios/${id}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(dadosAtualizacao)
-            })
-            .then(resposta => {
-                if (!resposta.ok) throw new Error('Erro ao alterar os dados.');
-                return resposta.json();
-            })
-            .then(() => {
-                alert('Dados alterados com sucesso!');
-            })
-            .catch(error => {
-                mostrarMensagemErro(error.message);
-            });
-        }
-
-        function mostrarMensagemErro(mensagem) {
-            const mensagemErro = document.getElementById('mensagemErro');
-            mensagemErro.textContent = mensagem;
-            mensagemErro.style.display = 'block';
-        }
+        
     </script>
 </body>
 </html>

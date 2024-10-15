@@ -26,10 +26,9 @@
     padding: 0;
     width: 200px;
     height: 200px;
-    justify-content: center;
+    margin-left: 40px;
     overflow: hidden;/*isso é pra deixar a img so onde eu quero */
     cursor: pointer;
-    position: relative;
     z-index: 1px;
 }
 
@@ -38,18 +37,37 @@
      height: 100%;
      object-fit: cover; /* pra cobrir o espaco todo */
      z-index: 2px;
-     position: relative;
+     
     
 }
 #tamanhoimagem2{
     object-fit: cover; /* pra cobrir o espaco todo */
 }
-.descricao textarea{
+
+.descricao input{
     background-color: #4b4b4b;
     border: none;
     border-radius: 15px;
     padding: 5px;
     resize: none;
+    margin-bottom: 20px;
+    width: 300px;
+    height: 35px;
+}
+.descricao {
+    list-style: none;
+    text-decoration: none;
+}
+#descricao {
+    width: 400px;
+    height: 400px;
+    background-color: #4b4b4b;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    resize: none;
+    text-decoration: none;
+    list-style: none;
 }
 .lapis svg{
     width: 15px;
