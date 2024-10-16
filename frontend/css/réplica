@@ -11,7 +11,7 @@
   }
   
   .mamo {
-    justify-content: center;
+    justify-content: center;/*AQUI Ó */
     display: flex;
   }
   
