@@ -36,6 +36,7 @@
                             <p>Confirmar Senha</p>
                             <input class="texto" type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirmar Senha" required>
                         </div>
+                        <span id="errorMessage" class="error"></span> <!-- Local onde a mensagem de erro será exibida -->
                         <div>
                             <p>Telefone/Contato</p>
                             <input class="texto" type="text" id="telefone" name="telefone" placeholder="(+DDD) Número" required>
@@ -55,6 +56,7 @@
                             <p>Representante</p>
                             <input class="texto" type="text" id="representante" name="representante" placeholder="Representante" required>
                         </div>
+                        
                     </div>
                 </div>
 
@@ -64,7 +66,7 @@
                 </div>
             </form>
             <div>
-                <span id="errorMessage" class="error"></span> <!-- Local onde a mensagem de erro será exibida -->
+                
             </div>
         </div>     
     </div>     
@@ -95,3 +97,43 @@
 
             // Verifica se as senhas coincidem
             if (!verificar()) {
+                return; // Interrompe o envio
+            }
+
+            // Coleta os dados do formulário
+            const formData = {
+                nome: document.getElementById('nome').value,
+                email: document.getElementById('email').value,
+                senha: document.getElementById('senha').value,
+                telefone: document.getElementById('telefone').value,
+                cnpj: document.getElementById('cnpj').value,
+                endereco: document.getElementById('endereco').value,
+                representante: document.getElementById('representante').value,
+            };
+
+            // Enviar os dados para o backend
+            fetch('http://localhost:3000/api/usuarios', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao cadastrar usuário');
+                }
+                return response.json();
+            })
+            .then(data => {
+                alert("Usuário cadastrado com sucesso!"); // Mensagem de sucesso
+                window.location.href = './login.html'; // Redireciona para a página de login
+            })
+            .catch(error => {
+                console.error(error);
+                document.getElementById("errorMessage").textContent = "Erro ao cadastrar usuário."; // Mensagem de erro
+            });
+        }
+    </script>
+</body>
+</html>
