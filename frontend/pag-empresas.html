@@ -61,9 +61,61 @@
     <div id="esponsividade">
         <div id="estrutura"></div>
     </div>
+    <p id="infoUsuario">Carregando informações do usuário...</p>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const userID = localStorage.getItem("userID"); // Recupera o ID do usuário do localStorage
         
-    </script>
+            // Função para carregar as informações da empresa, incluindo a descrição
+            function carregarDadosEmpresa() {
+                fetch(`http://localhost:3000/api/usuarios/${userID}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Erro ao carregar os dados da empresa.");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Preenche os placeholders com as informações da empresa
+                    document.getElementById("nome").value = data.nome || '';
+                    document.getElementById("telefone").value = data.telefone || '';
+                    document.getElementById("endereco").value = data.endereco || '';
+                    document.getElementById("cnpj").value = data.cnpj || '';
+                    document.getElementById("representante").value = data.representante || '';
+                    document.getElementById("descricao").value = data.descricao || '';  // Preenche a descrição
+                })
+                .catch(error => {
+                    console.error(error.message);
+                });
+            }
+        
+            // Chama a função para carregar os dados ao iniciar a página
+            carregarDadosEmpresa();
+        
+            // Função para salvar a descrição no banco de dados quando o usuário fizer alterações
+            document.getElementById("descricao").addEventListener("input", function() {
+                const novaDescricao = document.getElementById("descricao").value;
+        
+                // Atualiza apenas o campo de descrição no banco de dados
+                fetch(`http://localhost:3000/api/usuarios/${userID}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ descricao: novaDescricao })  // Envia a nova descrição
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Erro ao atualizar a descrição.");
+                    }
+                    console.log("Descrição atualizada com sucesso.");
+                })
+                .catch(error => {
+                    console.error("Erro ao atualizar a descrição:", error.message);
+                });
+            });
+        });
+        </script>
 </body>
 </html>

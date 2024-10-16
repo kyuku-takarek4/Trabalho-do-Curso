@@ -63,16 +63,11 @@
                 return resposta.json();
             })
             .then(usuario => {
-                console.log(usuario);
-                localStorage.setItem('usuario', usuario.id)
+                // Salva o ID do usuário no localStorage e redireciona
+                localStorage.setItem('userID', usuario.id);  // Salva o ID no localStorage
                 alert('Bem-vindo!');
-                window.location.href = "pag-inicial.html";
+                window.location.href = "pag-inicial.html";  // Redireciona para a página inicial
             })
-            .then(data => {
-    // Aqui você armazena o ID do usuário e redireciona
-    localStorage.setItem('userID', data.id);  // Salva o ID no localStorage
-    window.location.href = 'pag-inicial.html';  // Redireciona para a página inicial
-})
             .catch(error => {
                 mostrarMensagemErro(error.message);
             });
