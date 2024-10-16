@@ -11,125 +11,126 @@
 <body>
  <div>
     <div class="mamo"><p class="TituloDeCadastro">Cadastre-se</p></div> 
-        <div class="cadastrop">
-            <div class="cadastro">
-    <div>
-        <p>Nome</p>
-        <input class="texto" type="text" id="nome" name="nome" placeholder="Nome" required>
-    </div>
-    <div>
-        <p>E-mail</p>
-        <input class="texto" type="email" id="email" name="email" placeholder="E-mail" required>
-    </div>
-    <div>
-        <p>Senha</p>
-        <input class="texto" type="password" id="senha" name="senha" placeholder="Senha" required>
-    </div>
-    <div>
-        <p>Confirmar Senha</p>
-        <input class="texto" type="password" id="confirmar_senha" name="confirmar_senha"  placeholder="Confirmar Senha" required>
-    </div> 
-    <div>
-        <span id="errorMessage" class="error"></span> <!-- Local onde a mensagem de erro será exibida -->
-    </div>
-    <div>
-        <p>Telefone/Contato</p>
-        <input class="texto" type="text" id="telefone" name="telefone" placeholder="(+DDD) Número" required>
-    </div>
-    <div>
-        <p>CNPJ</p>
-        <input class="texto" type="text" id="cnpj" name="CNPJ" placeholder="CNPJ" required>
-    </div>
-    <div>
-        <p>Endereço</p>
-        <input class="texto" type="text" id="endereco" name="Endereço" placeholder="Endereço" required>
-    </div>
-    <div>
-        <p>Representante</p>
-        <input class="texto" type="text" id="representante" name="Representante" placeholder="Representante" required>
-    </div>
-</div>
-                    <div class="botoes">
-                        <button class="butao_de_voltar_1">Voltar</button> 
-                        <button onclick="submitForm()" class="butao_de_cadastrar">Cadastrar</button>
-                    </div>
+    <div class="cadastrop">
+        <div class="cadastro">
+            
+                <div>
+                    <p>Nome</p>
+                    <input class="texto" type="text" id="nome" name="nome" placeholder="Nome" required>
+                </div>
+                <div>
+                    <p>E-mail</p>
+                    <input class="texto" type="email" id="email" name="email" placeholder="E-mail" required>
+                </div>
+                <div>
+                    <p>Senha</p>
+                    <input class="texto" type="password" id="senha" name="senha" placeholder="Senha" required>
+                </div>
+                <div>
+                    <p>Confirmar Senha</p>
+                    <input class="texto" type="password" id="confirmar_senha" name="confirmar_senha" placeholder="Confirmar Senha" required>
+                </div>
+                <div>
+                    <span id="errorMessage" class="error"></span> <!-- Local onde a mensagem de erro será exibida -->
+                </div>
+                <div>
+                    <p>Telefone/Contato</p>
+                    <input class="texto" type="text" id="telefone" name="telefone" placeholder="(+DDD) Número" required>
+                </div>
+                <div>
+                    <p>CNPJ</p>
+                    <input class="texto" type="text" id="cnpj" name="CNPJ" placeholder="CNPJ" required>
+                </div>
+                <div>
+                    <p>Endereço</p>
+                    <input class="texto" type="text" id="endereco" name="endereco" placeholder="Endereço" required>
+                </div>
+                <div>
+                    <p>Representante</p>
+                    <input class="texto" type="text" id="representante" name="representante" placeholder="Representante" required>
+                </div>
+            
+            <div class="botoes">
+                <button class="butao_de_voltar_1" type="button" onclick="history.back()">Voltar</button>
+                <button class="butao_de_cadastrar" type="button" onclick="submitForm()">Cadastrar</button>
+            </div>
         </div>
-                
-  </div>     
-                <script>
-                    function verificar(){
-                        const password = document.getElementById("senha").value;
-                        const confirmPassword = document.getElementById("confirmar_senha").value;
-                        const errorMessage = document.getElementById("errorMessage");
+    </div>     
+ </div>     
 
-                    if (senha !== confirmar_senha) {
-                        errorMessage.textContent = "As senhas não coincidem."
-                return false;
-                     }
+<script>
+    function verificar() {
+        const senha = document.getElementById("senha").value;
+        const confirmarSenha = document.getElementById("confirmar_senha").value;
+        const errorMessage = document.getElementById("errorMessage");
 
-                     errorMessage.textContent = "";
-            return true;
-                        }
-                        // Função para enviar o formulário, após validar as senhas e os campos obrigatórios
-          function submitForm() {
-              const form = document.querySelector('form');
+        if (senha !== confirmarSenha) {
+            errorMessage.textContent = "As senhas não coincidem.";
+            return false;
+        }
 
-            // Verifica se o formulário é válido
-                if (!form.checkValidity()) {
-                form.reportValidity(); // Mostra as mensagens de erro nativas do HTML5
-                return;  // Interrompe o envio
-              }
+        errorMessage.textContent = "";
+        return true;
+    }
 
-            // Verifica se as senhas coincidem
-              if (!verificar()) {
-                return;  // Interrompe o envio se as senhas forem diferentes
-              }
+    function submitForm() {
+        const form = document.getElementById('formCadastro');
 
-               // Se tudo estiver correto, chama a função de cadastro
-              cadastrar();
+        // Verifica se o formulário é válido
+        if (!form.checkValidity()) {
+            form.reportValidity(); // Mostra as mensagens de erro nativas do HTML5
+            return;  // Interrompe o envio
+        }
+
+        // Verifica se as senhas coincidem
+        if (!verificar()) {
+            return;  // Interrompe o envio se as senhas forem diferentes
+        }
+
+        // Se tudo estiver correto, chama a função de cadastro
+        cadastrar();
+    }
+
+    function cadastrar() {
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const senha = document.getElementById('senha').value;
+        const telefone = document.getElementById('telefone').value;
+        const cnpj = document.getElementById('cnpj').value;
+        const endereco = document.getElementById('endereco').value;
+        const representante = document.getElementById('representante').value;
+
+        const usuario = {
+            nome: nome,
+            email: email,
+            senha: senha,
+            telefone: telefone,
+            cnpj: cnpj,
+            endereco: endereco,
+            representante: representante
+        };
+
+        fetch('http://localhost:3000/api/usuarios', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(usuario)
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
             }
-
-                        function cadastrar(){
-                    const nome = document.getElementById('nome').value;
-                    const email = document.getElementById('email').value;
-                    const senha = document.getElementById('senha').value;
-                    const telefone = document.getElementById('telefone').value;
-                    const cnpj = document.getElementById('cnpj').value;
-                    const endereco = document.getElementById('endereco').value;
-                    const representante = document.getElementById('representante').value;
-
-                    const usuario = {
-                        nome: nome,
-                        email: email,
-                        senha: senha,
-                        telefone: parseInt(telefone, 15),
-                        cnpj: cnpj,
-                        endereco: endereco,
-                        representante: representante
-                    };
-
-            fetch('http://localhost:3000/api/usuarios', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(usuario)
-            })
-                .then(response => {
-                    if (response.ok) {
-                        return response.json();
-                    }
-                    throw new Error('Erro ao cadastrar a pessoa');
-                })
-                .then(data => {
-                    alert('Seja bem vindo!');
-                    // Limpar os campos de entrada após o envio
-                    window.location.href = "login.html"
-                })
-                .catch(error => {
-                    console.error('Erro:', error);
-                });
-                }
-                    </script>
+            throw new Error('Erro ao cadastrar a pessoa');
+        })
+        .then(data => {
+            alert('Seja bem vindo!');
+            window.location.href = "login.html"; // Redireciona para a página de login
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+        });
+    }
+</script>
 </body>
 </html>
