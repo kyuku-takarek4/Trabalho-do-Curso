@@ -339,6 +339,9 @@ header{
     list-style: none;
     text-decoration: none;
 }
+.descricao a{
+    font-weight: bolder;
+}
 #descricao {
     width: 400px;
     height: 400px;
