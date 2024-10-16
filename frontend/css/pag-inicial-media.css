@@ -1,0 +1,10 @@
+@media screen and (max-width:1000px){
+    .lupa-e-barra{
+        width: 10px;
+        background-color: aquamarine;
+        
+    }
+    body{
+        background-color: brown;
+    }
+}

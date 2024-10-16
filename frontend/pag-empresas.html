@@ -10,31 +10,26 @@
 </head>
 <body class="lapis">
     <div class="corpo">
-        <div id="perfil">
-            <div><img id="tamanhoimagem" src="./imagens/image.png"></div> 
+        <button id="perfil">
+            <div><img id="tamanhoimagem" src="./imagens/image.png" alt="Imagem de Perfil"></div> 
+        </button>
+
+        <div class="descricao" id="margem">
+            <p>Insira o link da imagem para atualizar seu perfil:</p>
+            <input type="text" id="linkImagem" placeholder="Link da Imagem" required>
         </div>
 
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 485.219 485.22">
-                    <g>
-                        <path d="M467.476,146.438l-21.445,21.455L317.35,39.23l21.445-21.457c23.689-23.692,62.104-23.692,85.795,0l42.886,42.897 C491.133,84.349,491.133,122.748,467.476,146.438z M167.233,403.748c-5.922,5.922-5.922,15.513,0,21.436 c5.925,5.955,15.521,5.955,21.443,0L424.59,189.335l-21.469-21.457L167.233,403.748z M60,296.54c-5.925,5.927-5.925,15.514,0,21.44 c5.922,5.923,15.518,5.923,21.443,0L317.35,82.113L295.914,60.67L60,296.54z M338.767,103.54L102.881,339.421 c-11.845,11.822-11.815,31.041,0,42.886c11.85,11.846,31.038,11.901,42.914-0.032l235.886-235.837L338.767,103.54z M145.734,446.572c-7.253-7.262-10.749-16.465-12.05-25.948c-3.083,0.476-6.188,0.919-9.36,0.919 c-16.202,0-31.419-6.333-42.881-17.795c-11.462-11.491-17.77-26.687-17.77-42.887c0-2.954,0.443-5.833,0.859-8.703 c-9.803-1.335-18.864-5.629-25.972-12.737c-0.682-0.677-0.917-1.596-1.538-2.338L0,485.216l147.748-36.986 C147.097,447.637,146.36,447.193,145.734,446.572z"/>
-                    </g>
-                </svg>
-            </div>
-        
-
-        <div id="alterarDados" > 
-            <ul class="descricao" >
-
+        <div id="alterarDados"> 
+            <ul class="descricao">
                 <li><input type="text" id="nome" placeholder="Nome" required></li>
                 <li><input type="text" id="telefone" placeholder="Telefone" required></li>
                 <li><input type="text" id="endereco" placeholder="Endereço" required></li>
                 <li><input type="text" id="cnpj" placeholder="CNPJ" required></li>
                 <li><input type="text" id="representante" placeholder="Representante" required></li>
                 <li><textarea id="descricao" placeholder="Descrição da Empresa..." required></textarea></li>
-                <button id="alterar"  onclick="alterarDados()">Alterar Dados</button>
-           </ul>
-           <div id="mensagemErro" style="display:none; color:red;"></div>
+            </ul>
+            <button id="alterar" onclick="alterarDados()">Alterar Dados</button>
+            <div id="mensagemErro" style="display:none; color:red;"></div>
         </div>
     </div>
 
@@ -66,8 +61,8 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const userID = localStorage.getItem("userID"); // Recupera o ID do usuário do localStorage
-        
-            // Função para carregar as informações da empresa, incluindo a descrição
+
+            // Função para carregar as informações da empresa
             function carregarDadosEmpresa() {
                 fetch(`http://localhost:3000/api/usuarios/${userID}`)
                 .then(response => {
@@ -84,38 +79,80 @@
                     document.getElementById("cnpj").value = data.cnpj || '';
                     document.getElementById("representante").value = data.representante || '';
                     document.getElementById("descricao").value = data.descricao || '';  // Preenche a descrição
+                    document.getElementById("tamanhoimagem").src = data.imagem || './imagens/image.png';  // Atualiza a imagem de perfil
                 })
                 .catch(error => {
                     console.error(error.message);
                 });
             }
-        
+
             // Chama a função para carregar os dados ao iniciar a página
             carregarDadosEmpresa();
-        
-            // Função para salvar a descrição no banco de dados quando o usuário fizer alterações
-            document.getElementById("descricao").addEventListener("input", function() {
-                const novaDescricao = document.getElementById("descricao").value;
-        
-                // Atualiza apenas o campo de descrição no banco de dados
+
+            // Função para atualizar a imagem de perfil
+            document.getElementById("linkImagem").addEventListener("input", function() {
+                const linkImagem = document.getElementById("linkImagem").value;
+
+                if (linkImagem) {
+                    // Atualiza a imagem do perfil
+                    document.getElementById("tamanhoimagem").src = linkImagem;
+
+                    // Aqui você pode também fazer uma requisição para atualizar a URL da imagem no banco de dados
+                    fetch(`http://localhost:3000/api/usuarios/${userID}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ imagem: linkImagem })  // Envia o novo link da imagem
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Erro ao atualizar a imagem.");
+                        }
+                        console.log("Imagem atualizada com sucesso.");
+                    })
+                    .catch(error => {
+                        console.error("Erro ao atualizar a imagem:", error.message);
+                    });
+                }
+            });
+
+            // Função para atualizar os dados da empresa
+            window.alterarDados = function() {
+                const nome = document.getElementById("nome").value;
+                const telefone = document.getElementById("telefone").value;
+                const endereco = document.getElementById("endereco").value;
+                const cnpj = document.getElementById("cnpj").value;
+                const representante = document.getElementById("representante").value;
+                const descricao = document.getElementById("descricao").value;
+
+                // Enviar os dados atualizados para o servidor
                 fetch(`http://localhost:3000/api/usuarios/${userID}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ descricao: novaDescricao })  // Envia a nova descrição
+                    body: JSON.stringify({
+                        nome: nome,
+                        telefone: telefone,
+                        endereco: endereco,
+                        cnpj: cnpj,
+                        representante: representante,
+                        descricao: descricao
+                    })
                 })
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error("Erro ao atualizar a descrição.");
+                        throw new Error("Erro ao atualizar os dados.");
                     }
-                    console.log("Descrição atualizada com sucesso.");
+                    console.log("Dados atualizados com sucesso.");
+                    // Aqui você pode exibir uma mensagem de sucesso ao usuário
                 })
                 .catch(error => {
-                    console.error("Erro ao atualizar a descrição:", error.message);
+                    console.error("Erro ao atualizar os dados:", error.message);
                 });
-            });
+            };
         });
-        </script>
+    </script>
 </body>
 </html>

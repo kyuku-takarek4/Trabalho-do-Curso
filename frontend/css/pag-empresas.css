@@ -43,6 +43,9 @@
 #tamanhoimagem2{
     object-fit: cover; /* pra cobrir o espaco todo */
 }
+#margem{
+    margin-left: 40px;
+}
 
 .descricao input{
     background-color: #4b4b4b;
@@ -53,11 +56,16 @@
     margin-bottom: 20px;
     width: 300px;
     height: 35px;
+    color: #d1d1d1;
+}
+.descricao p{
+    color: #d1d1d1;
 }
 .descricao {
     list-style: none;
     text-decoration: none;
 }
+
 #descricao {
     width: 400px;
     height: 400px;
@@ -68,6 +76,7 @@
     resize: none;
     text-decoration: none;
     list-style: none;
+    color:#d1d1d1;
 }
 .lapis svg{
     width: 15px;
@@ -102,6 +111,7 @@
     overflow: hidden;
 }
 #alterar{
+    margin-left: 40px;
     margin-top: 10px;
     border: none;
     cursor: pointer;

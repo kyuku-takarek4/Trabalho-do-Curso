@@ -60,13 +60,13 @@ body {
 .botoes{
   display: flex;
   justify-content: space-between;
-  margin-top: 100px;
+  margin-top: 90px;
   top: 100px;
 }
 .botaodeentrar {
   text-decoration: none;
   text-align: center;
-  padding: 15px 15px 10px ;
+  
   background: linear-gradient(45deg, #4fa4ff, #3de2ff );
   color: rgb(255, 255, 255);
   border: none;
@@ -85,7 +85,7 @@ body {
 }
 .botaodevoltar {
   text-decoration: none;
-  padding: 15px 40px 10px  ;
+  padding: 15px 20px 10px  ;
   background: linear-gradient(to right, #3de2ff,#4fa4ff);
   color: white;
   border: none;
@@ -104,5 +104,7 @@ body {
 input::placeholder{
     color: #9ea0a0; /*isso é a cor da letra da caixa de texto*/
 }
-
+#texto{
+  margin-left: 20px;
+}
 
