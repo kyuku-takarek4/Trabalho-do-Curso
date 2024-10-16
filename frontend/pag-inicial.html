@@ -13,23 +13,25 @@
 </head>
 
 <body>
-    <div id="imagem-sidebar" class="sidebar-imagem" style="display: none;">
+    <div id="imagem-sidebar" class="sidebar-imagem" style="display: none;"> 
         <button id="fechar-imagem" onclick="fecharImagemSidebar()">X</button>
         <div id="divisao">
-        <div><img id="imagem-modal" src="" alt="Imagem" /></div>
-        <div id="borda-texto">
-           <ul class="descricao" >
-
-            <li><input type="text" id="nome" placeholder="Nome" required></li>
-            <li><input type="text" id="telefone" placeholder="Telefone" required></li>
-            <li><input type="text" id="endereco" placeholder="Endereço" required></li>
-            <li><input type="text" id="representante" placeholder="Representante" required></li>
-            <h2>Descrição:</h2>
-            <li><textarea id="descricao" placeholder="" required></textarea></li>
-          </ul>
-         </div>
+            <div>
+                <img id="imagem-modal" src="" alt="Imagem" />
+            </div>
+            <div id="borda-texto">
+                <ul class="descricao">
+                    <li><input type="text" id="nome" placeholder="Nome" required readonly></li>
+                    <li><input type="text" id="telefone" placeholder="Telefone" required readonly></li>
+                    <li><input type="text" id="endereco" placeholder="Endereço" required readonly></li>
+                    <li><input type="text" id="representante" placeholder="Representante" required readonly></li>
+                    <h2>Descrição:</h2>
+                    <li><textarea id="descricao" placeholder="" required readonly></textarea></li>
+                </ul>
+            </div>
         </div>
     </div>
+    
     <div class="scroll">
         <header id="bordabaixa">
 
@@ -80,12 +82,10 @@
                     <div id="texto-teste" class="ubuntu-light">teste</div>
                     <div class="container">
                         <button class="prev">⇦</button>
-                                <div class="carrossel" id="carrossel">
-                                    <div class="imagem"><img
-                                            src="https://i.pinimg.com/736x/3d/78/aa/3d78aa4f8b00c07d60a83777bde09d89.jpg"
-                                            alt="imagem 1"></div>
-
-                            <button class="next">⇨</button>
+                        <div class="carrossel" id="carrossel">
+                            <!-- As imagens serão inseridas aqui pelo JavaScript -->
+                        </div>
+                        <button class="next">⇨</button>
                     </div>
                     <div id="texto-teste" class="ubuntu-light">teste 2</div>
                     <div class="container">
@@ -126,30 +126,38 @@
 
 
 
-
+        <script src="carrossel.js"></script>
 
         <script src="pag-inicial.js"></script>
         <script>
             // Garante que o código seja executado após o DOM estar totalmente carregado
-            document.addEventListener('DOMContentLoaded', function() {
-                // Verifica se o usuário está logado (se o ID está no localStorage)
-                const userID = localStorage.getItem('userID');
-    
-                if (!userID) {
-                    // Se o ID não está no localStorage, redireciona para a página de login
-                    alert('Você precisa fazer login primeiro.');
-                    window.location.href = 'login.html';
-                } else {
-                    // Caso o ID esteja presente, exibe uma mensagem de boas-vindas ou carrega informações do usuário
-                    document.getElementById('mensagemBoasVindas').textContent = `Olá, usuário de ID: ${userID}!`;
-    
-                    // Exibe um console.log para indicar que o processo foi bem-sucedido
-                    console.log('Login bem-sucedido. ID do usuário encontrado:', userID);
-    
-                    // Aqui você pode adicionar código para buscar informações adicionais do usuário
-                    // a partir do backend usando o userID, caso deseje.
+            document.addEventListener("DOMContentLoaded", function() {
+    // Verifica se o usuário está logado (se o ID está no localStorage)
+    const userID = localStorage.getItem('userID');
+
+    if (userID) {
+        // Faz uma requisição ao backend para obter os dados do usuário
+        fetch(`http://localhost:3000/api/usuarios/${userID}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Erro ao carregar os dados do usuário.");
                 }
+                return response.json();
+            })
+            .then(usuario => {
+                // Atualiza a imagem do botão perfil com a imagem do usuário
+                const imagemPerfil = document.getElementById("tamanhoimagem");
+                imagemPerfil.src = usuario.imagem; // Adiciona a imagem do usuário
+                imagemPerfil.alt = `Perfil de ${usuario.nome}`; // Texto alternativo
+            })
+            .catch(error => {
+                console.error(error.message);
             });
+    } else {
+        console.error('ID do usuário não encontrado');
+    }
+});
+
         </script>
         <script>
             // Função para redirecionar com o ID do usuário
